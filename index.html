@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vandna Gupta | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      background:rgba(5,8,22,0.85);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#8b5cf6;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+      color:#d1d5db;
+    }
+
+    .nav-links a:hover{
+      color:#8b5cf6;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:100px 10%;
+      background:
+      radial-gradient(circle at top right, rgba(139,92,246,0.25), transparent 30%),
+      radial-gradient(circle at bottom left, rgba(6,182,212,0.2), transparent 30%);
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      width:100%;
+      max-width:1200px;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#8b5cf6;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      font-size:1.1rem;
+      margin-bottom:35px;
+      line-height:1.8;
+    }
+
+    .btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .primary-btn{
+      background:#8b5cf6;
+      color:white;
+    }
+
+    .primary-btn:hover{
+      background:#7c3aed;
+      transform:translateY(-4px);
+    }
+
+    .secondary-btn{
+      border:1px solid #8b5cf6;
+      color:#8b5cf6;
+    }
+
+    .secondary-btn:hover{
+      background:#8b5cf6;
+      color:white;
+    }
+
+    .hero-card{
+      background:#111827;
+      padding:40px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 40px rgba(139,92,246,0.2);
+    }
+
+    .hero-card h3{
+      color:#8b5cf6;
+      margin-bottom:20px;
+      font-size:1.5rem;
+    }
+
+    .hero-card ul{
+      list-style:none;
+    }
+
+    .hero-card li{
+      margin-bottom:15px;
+      color:#d1d5db;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.8rem;
+      margin-bottom:60px;
+    }
+
+    .section-title span{
+      color:#8b5cf6;
+    }
+
+    /* ABOUT */
+
+    .about-card{
+      background:#111827;
+      padding:40px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+      line-height:1.9;
+      color:#d1d5db;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#111827;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      border-color:#8b5cf6;
+      box-shadow:0 0 25px rgba(139,92,246,0.15);
+    }
+
+    .project-card h3{
+      color:#8b5cf6;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:18px;
+    }
+
+    .skill{
+      padding:14px 22px;
+      background:#111827;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      color:#d1d5db;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      border-color:#8b5cf6;
+      transform:scale(1.05);
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      max-width:750px;
+      margin:auto;
+      background:#111827;
+      padding:50px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-align:center;
+    }
+
+    .contact-box p{
+      margin-bottom:18px;
+      color:#d1d5db;
+      font-size:1.05rem;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#94a3b8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text h1{
+        font-size:3rem;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="nav-container">
+
+      <div class="logo">
+        Vandna Gupta
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-text">
+
+        <h1>
+          AI-Augmented <br>
+          <span>Bioinformatics</span><br>
+          Researcher
+        </h1>
+
+        <p>
+          M.Sc. Bioinformatics candidate specializing in metatranscriptomics,
+          cancer genomics, microbiome analysis, AI-powered research workflows,
+          and computational biology.
+        </p>
+
+        <div class="btns">
+
+          <a href="#projects" class="btn primary-btn">
+            View Projects
+          </a>
+
+          <a href="#contact" class="btn secondary-btn">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <h3>Core Expertise</h3>
+
+        <ul>
+          <li>• Metatranscriptomics Pipelines</li>
+          <li>• NGS Analysis</li>
+          <li>• Microbiome Research</li>
+          <li>• KEGG Functional Profiling</li>
+          <li>• AI-Augmented Research</li>
+          <li>• Python • R • Linux</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
+
+    <div class="about-card">
+
+      <p>
+        I am Vandna Gupta, an M.Sc. Bioinformatics student at Chaudhary Charan Singh University
+        with active research experience at NICPR Noida.
+      </p>
+
+      <br>
+
+      <p>
+        My work focuses on metatranscriptomics pipeline development,
+        microbiome profiling, NGS analysis, KEGG pathway interpretation,
+        and AI-integrated computational biology workflows.
+      </p>
+
+      <br>
+
+      <p>
+        I work with tools including Kraken2, Bowtie2, FastQC, Trimmomatic,
+        DESeq2, edgeR, RStudio, Python, Linux, and AI tools like Claude AI,
+        Gemini CLI, AntiGravity AI, and OpenCode AI.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">
+      Research <span>Projects</span>
+    </h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <h3>Metatranscriptomics Pipeline</h3>
+
+        <p>
+          Developed a complete end-to-end metatranscriptomics workflow from
+          raw SRA data to abundance count matrix generation using FastQC,
+          Bowtie2, Kraken2, STAR, HISAT2, and DESeq2.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Functional Biomarker Profiling</h3>
+
+        <p>
+          Performed KEGG-based functional profiling of cancer-associated
+          microbial taxa for biomarker discovery and pathway interpretation.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>OSCC Microbiome Meta-analysis</h3>
+
+        <p>
+          Conducted oral microbiome meta-analysis in OSCC patient cohorts
+          using statistical analysis and differential abundance testing in R.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>AI-Augmented Bioinformatics</h3>
+
+        <p>
+          Integrated Claude AI, Gemini CLI, OpenCode AI, and AntiGravity AI
+          into research workflows for automation, biological interpretation,
+          and scientific documentation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      Technical <span>Skills</span>
+    </h2>
+
+    <div class="skills-container">
+
+      <div class="skill">Python</div>
+      <div class="skill">R</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Kraken2</div>
+      <div class="skill">Bowtie2</div>
+      <div class="skill">FastQC</div>
+      <div class="skill">Trimmomatic</div>
+      <div class="skill">DESeq2</div>
+      <div class="skill">edgeR</div>
+      <div class="skill">KEGG</div>
+      <div class="skill">NGS Analysis</div>
+      <div class="skill">Microbiome Analysis</div>
+      <div class="skill">Bioinformatics</div>
+      <div class="skill">AI Research Tools</div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="section-title">
+      Contact <span>Me</span>
+    </h2>
+
+    <div class="contact-box">
+
+      <p>
+        <strong>Email:</strong> vandnaa2230@gmail.com
+      </p>
+
+      <p>
+        <strong>Location:</strong> Khurja, Uttar Pradesh, India
+      </p>
+
+      <p>
+        <strong>GitHub:</strong> github.com/Vandna-22
+      </p>
+
+      <p>
+        <strong>LinkedIn:</strong> linkedin.com/in/vandna-gupta-6a579a351
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Vandna Gupta | Bioinformatics Portfolio
+  </footer>
+
+</body>
+</html>
