@@ -87,7 +87,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
 
     proj2 = doc.add_paragraph()
     proj2.add_run('Functional Biomarker Profiling using KEGG Database').bold = True
-    add_bullet('Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers using MetaPhlAn, Kraken2, and QIIME')
+    add_bullet('Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers using DADA2 ASV pipeline, 16S rRNA profiling, and QIIME2')
     add_bullet('Integrated Claude AI-assisted annotation with statistical outputs to accelerate pathway-level biological interpretation')
 
     proj3 = doc.add_paragraph()
