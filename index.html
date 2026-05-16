@@ -1,529 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vandna Gupta | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#050816;
-      color:white;
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:1000;
-      background:rgba(5,8,22,0.85);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 0;
-    }
-
-    .logo{
-      font-size:1.5rem;
-      font-weight:700;
-      color:#8b5cf6;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:30px;
-    }
-
-    .nav-links a{
-      transition:0.3s;
-      color:#d1d5db;
-    }
-
-    .nav-links a:hover{
-      color:#8b5cf6;
-    }
-
-    /* HERO SECTION */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:100px 10%;
-      background:
-      radial-gradient(circle at top right, rgba(139,92,246,0.25), transparent 30%),
-      radial-gradient(circle at bottom left, rgba(6,182,212,0.2), transparent 30%);
-    }
-
-    .hero-content{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-      width:100%;
-      max-width:1200px;
-    }
-
-    .hero-text h1{
-      font-size:4rem;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .hero-text h1 span{
-      color:#8b5cf6;
-    }
-
-    .hero-text p{
-      color:#cbd5e1;
-      font-size:1.1rem;
-      margin-bottom:35px;
-      line-height:1.8;
-    }
-
-    .btns{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:14px 28px;
-      border-radius:12px;
-      font-weight:600;
-      transition:0.3s;
-    }
-
-    .primary-btn{
-      background:#8b5cf6;
-      color:white;
-    }
-
-    .primary-btn:hover{
-      background:#7c3aed;
-      transform:translateY(-4px);
-    }
-
-    .secondary-btn{
-      border:1px solid #8b5cf6;
-      color:#8b5cf6;
-    }
-
-    .secondary-btn:hover{
-      background:#8b5cf6;
-      color:white;
-    }
-
-    .hero-card{
-      background:#111827;
-      padding:40px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 40px rgba(139,92,246,0.2);
-    }
-
-    .hero-card h3{
-      color:#8b5cf6;
-      margin-bottom:20px;
-      font-size:1.5rem;
-    }
-
-    .hero-card ul{
-      list-style:none;
-    }
-
-    .hero-card li{
-      margin-bottom:15px;
-      color:#d1d5db;
-    }
-
-    /* SECTION */
-
-    section{
-      padding:100px 10%;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:2.8rem;
-      margin-bottom:60px;
-    }
-
-    .section-title span{
-      color:#8b5cf6;
-    }
-
-    /* ABOUT */
-
-    .about-card{
-      background:#111827;
-      padding:40px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,0.08);
-      line-height:1.9;
-      color:#d1d5db;
-    }
-
-    /* PROJECTS */
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-
-    .project-card{
-      background:#111827;
-      padding:30px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,0.08);
-      transition:0.3s;
-    }
-
-    .project-card:hover{
-      transform:translateY(-8px);
-      border-color:#8b5cf6;
-      box-shadow:0 0 25px rgba(139,92,246,0.15);
-    }
-
-    .project-card h3{
-      color:#8b5cf6;
-      margin-bottom:15px;
-    }
-
-    .project-card p{
-      color:#cbd5e1;
-      line-height:1.8;
-    }
-
-    /* SKILLS */
-
-    .skills-container{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:18px;
-    }
-
-    .skill{
-      padding:14px 22px;
-      background:#111827;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.08);
-      color:#d1d5db;
-      transition:0.3s;
-    }
-
-    .skill:hover{
-      border-color:#8b5cf6;
-      transform:scale(1.05);
-    }
-
-    /* CONTACT */
-
-    .contact-box{
-      max-width:750px;
-      margin:auto;
-      background:#111827;
-      padding:50px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,0.08);
-      text-align:center;
-    }
-
-    .contact-box p{
-      margin-bottom:18px;
-      color:#d1d5db;
-      font-size:1.05rem;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#94a3b8;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-      .hero-content{
-        grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:3rem;
-      }
-
-      .nav-links{
-        display:none;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandna Gupta | Bioinformatics Researcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+    <div id="particles-js"></div>
 
-  <!-- NAVBAR -->
-
-  <nav>
-    <div class="nav-container">
-
-      <div class="logo">
-        Vandna Gupta
-      </div>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-    </div>
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="hero-text">
-
-        <h1>
-          AI-Augmented <br>
-          <span>Bioinformatics</span><br>
-          Researcher
-        </h1>
-
-        <p>
-          M.Sc. Bioinformatics candidate specializing in metatranscriptomics,
-          cancer genomics, microbiome analysis, AI-powered research workflows,
-          and computational biology.
-        </p>
-
-        <div class="btns">
-
-          <a href="#projects" class="btn primary-btn">
-            View Projects
-          </a>
-
-          <a href="#contact" class="btn secondary-btn">
-            Contact Me
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="hero-card">
-
-        <h3>Core Expertise</h3>
-
-        <ul>
-          <li>• Metatranscriptomics Pipelines</li>
-          <li>• NGS Analysis</li>
-          <li>• Microbiome Research</li>
-          <li>• KEGG Functional Profiling</li>
-          <li>• AI-Augmented Research</li>
-          <li>• Python • R • Linux</li>
+    <nav class="navbar">
+        <div class="logo">VG.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#blogs">Blogs</a></li>
         </ul>
+    </nav>
 
-      </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="VANDNA GUPTA">VANDNA GUPTA</h1>
+            <h2 class="subtitle">M.Sc. Bioinformatics | AI-Augmented Clinical & Functional Genomics Researcher</h2>
+            
+            <div class="contact-info">
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Khurja, UP, India</a>
+                <a href="mailto:vandnaa2230@gmail.com"><i class="fas fa-envelope"></i> vandnaa2230@gmail.com</a>
+                <a href="https://www.linkedin.com/in/vandna-gupta-6a579a351" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Vandna-22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
 
-    </div>
+            <div class="tags">
+                <span class="tag">Linux</span>
+                <span class="tag">Python</span>
+                <span class="tag">R</span>
+                <span class="tag">KEGG</span>
+                <span class="tag">Kraken2</span>
+                <span class="tag">Claude AI</span>
+            </div>
+        </div>
+    </header>
 
-  </section>
+    <main>
+        <section id="about" class="section reveal">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="card glass">
+                <p>M.Sc. Bioinformatics candidate (Chaudhary Charan Singh University, 2024-2026) with active research internship at the National Institute of Cancer Prevention and Research (NICPR), Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling using KEGG database, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research.</p>
+                <p>Distinguished by advanced proficiency in next-generation AI research tools including Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and Gemini CLI, enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow design at a level uncommon among early-career researchers. Certified in Advanced Microsoft Excel for data analysis and reporting.</p>
+            </div>
+        </section>
 
-  <!-- ABOUT -->
+        <section id="experience" class="section reveal">
+            <h2 class="section-title">Research & Internship Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item glass">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bioinformatics Research Trainee</h3>
+                        <h4>National Institute of Cancer Prevention & Research (NICPR), Noida</h4>
+                        <span class="date">2025 - Present</span>
+                        <ul>
+                            <li>Developed and executed a complete end-to-end metatranscriptomics pipeline for microbial community profiling from NCBI BioProject sequencing data.</li>
+                            <li>Conducted functional profiling of cancer-associated biomarkers using the KEGG database to map metabolic and signaling pathways implicated in disease progression.</li>
+                            <li>Analyzed NGS-derived microbiome datasets from oral and other cancer cohorts using Linux-based bioinformatics workflows.</li>
+                            <li>Applied statistical methods including Mann-Whitney and Kruskal-Wallis tests for differential abundance testing in R.</li>
+                            <li>Leveraged Claude AI for AI-assisted literature review, rapid hypothesis generation, and manuscript preparation.</li>
+                            <li>Utilized NeodiSC and AntiGravity AI tools for specialized bioinformatics analysis and biomarker discovery.</li>
+                            <li>Generated publication-quality data visualizations including violin plots and boxplots using ggplot2.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="about">
+        <section id="projects" class="section reveal">
+            <h2 class="section-title">Research Projects</h2>
+            <div class="grid">
+                <div class="card project-card glass">
+                    <h3>End-to-End Metatranscriptomics Pipeline</h3>
+                    <p>Designed a complete metatranscriptomics pipeline from raw NCBI BioProject SRA data to functional abundance count matrix.</p>
+                    <div class="tech-stack">SRA Toolkit • FastQC • Bowtie2 • Kraken2 • STAR • DESeq2</div>
+                </div>
+                
+                <div class="card project-card glass">
+                    <h3>Functional Biomarker Profiling using KEGG</h3>
+                    <p>Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers. Integrated Claude AI for pathway-level interpretation.</p>
+                    <div class="tech-stack">KEGG • Biomarker Discovery • Claude AI</div>
+                </div>
 
-    <h2 class="section-title">
-      About <span>Me</span>
-    </h2>
+                <div class="card project-card glass">
+                    <h3>Oral Microbiome Meta-Analysis in OSCC</h3>
+                    <p>Co-authored a systematic review analyzing oral microbiome composition across OSCC patient cohorts globally. Manuscript under review.</p>
+                    <div class="tech-stack">Meta-analysis • R • Biomarker taxa</div>
+                </div>
 
-    <div class="about-card">
+                <div class="card project-card glass">
+                    <h3>AI-Augmented Bioinformatics Workflows</h3>
+                    <p>Designed workflows integrating Claude AI, Gemini CLI, and OpenCode AI for code generation, debugging, and scientific report drafting.</p>
+                    <div class="tech-stack">LLMs • Gemini CLI • OpenCode AI</div>
+                </div>
+            </div>
+        </section>
 
-      <p>
-        I am Vandna Gupta, an M.Sc. Bioinformatics student at Chaudhary Charan Singh University
-        with active research experience at NICPR Noida.
-      </p>
+        <section id="skills" class="section reveal">
+            <h2 class="section-title">Technical Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-dna"></i> Metatranscriptomics & Genomics</h3>
+                    <p>SRA Toolkit, FastQC, Trimmomatic, Bowtie2, Kraken2, Bracken, STAR, HISAT2, DESeq2, edgeR, Variant annotation, functional profiling, KEGG mapping</p>
+                </div>
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-robot"></i> AI Research Tools</h3>
+                    <p>Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI</p>
+                </div>
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-code"></i> Programming & Tools</h3>
+                    <p>Python, R (ggplot2, DESeq2, edgeR), Bash/Linux shell scripting (Ubuntu), Advanced Excel, Jupyter Notebook, RStudio</p>
+                </div>
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-chart-bar"></i> Statistics & Databases</h3>
+                    <p>Mann-Whitney, Kruskal-Wallis, differential expression analysis, KEGG, NCBI, BioProject, ClinVar</p>
+                </div>
+            </div>
+        </section>
 
-      <br>
+        <section id="education" class="section reveal">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="grid">
+                <div class="card edu-card glass">
+                    <h3>M.Sc. Bioinformatics</h3>
+                    <h4>Chaudhary Charan Singh University, Meerut</h4>
+                    <span class="date">2024 - 2026 (Expected)</span>
+                    <p>Coursework: Genomics, Proteomics, Bioinformatics Algorithms, Molecular Biology, Computational Biology, Biostatistics</p>
+                </div>
+                <div class="card edu-card glass">
+                    <h3>B.Sc. Biotechnology</h3>
+                    <h4>Chaudhary Charan Singh University, Meerut</h4>
+                    <span class="date">Completed</span>
+                </div>
+            </div>
 
-      <p>
-        My work focuses on metatranscriptomics pipeline development,
-        microbiome profiling, NGS analysis, KEGG pathway interpretation,
-        and AI-integrated computational biology workflows.
-      </p>
+            <h3 class="subsection-title">Certifications</h3>
+            <ul class="cert-list glass">
+                <li><i class="fas fa-certificate"></i> Advanced Microsoft Excel - E-Certificate (2025)</li>
+                <li><i class="fas fa-certificate"></i> Bioinformatics Research Internship - NICPR (2025-Present)</li>
+                <li><i class="fas fa-certificate"></i> AI-Augmented Research Methodology</li>
+                <li><i class="fas fa-certificate"></i> M.Sc. Advanced Training in Genomics, Computational Biology & Molecular Biology</li>
+            </ul>
+        </section>
 
-      <br>
+        <section id="blogs" class="section reveal">
+            <h2 class="section-title">Blogs & Articles</h2>
+            <div class="card glass">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">Unlocking the Oral Microbiome in OSCC: A Metagenomics & Machine Learning Approach</h3>
+                <p><strong>Introduction</strong><br>
+                Oral Squamous Cell Carcinoma (OSCC) is one of the most prevalent head and neck cancers worldwide. Recent evidence strongly suggests that the oral microbiome plays a crucial role in its progression. To better understand this complex host-microbiome relationship, I recently concluded an extensive metagenomics analysis pipeline, integrating traditional bioinformatics with machine learning predictive modeling.</p>
 
-      <p>
-        I work with tools including Kraken2, Bowtie2, FastQC, Trimmomatic,
-        DESeq2, edgeR, RStudio, Python, Linux, and AI tools like Claude AI,
-        Gemini CLI, AntiGravity AI, and OpenCode AI.
-      </p>
+                <p><strong>Data Curation & Processing Pipeline</strong><br>
+                Our research began with an exhaustive literature review. We extracted highly relevant peer-reviewed papers focusing on OSCC and the microbiome, from which we successfully isolated specific BioSample IDs representing diverse patient cohorts.</p>
 
-    </div>
+                <p>With the dataset curated, we leveraged <strong>QIIME 2</strong> (Quantitative Insights Into Microbial Ecology), a powerful bioinformatics platform, to process the raw sequence data. This allowed us to generate highly detailed taxonomic feature tables:</p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Level 2 (Phylum Level):</strong> Giving us a macroscopic overview of the microbial community structure.</li>
+                    <li><strong>Level 7 (Species Level):</strong> Providing granular, high-resolution insights into the specific pathogenic and commensal bacteria associated with the OSCC tumor microenvironment.</li>
+                </ul>
 
-  </section>
+                <p><strong>Diversity Metrics & Ecological Shifts</strong><br>
+                To understand the ecological imbalance (dysbiosis) in the cancer microenvironment, we generated comprehensive diversity plots:</p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Alpha Diversity:</strong> To measure the richness and evenness of microbial species within individual OSCC samples.</li>
+                    <li><strong>Beta Diversity:</strong> To evaluate the structural differences in microbial community composition across different patient samples, revealing distinct microbial clustering patterns associated with the disease state.</li>
+                </ul>
 
-  <!-- PROJECTS -->
+                <p><strong>Predictive Modeling with Machine Learning</strong><br>
+                Bioinformatics provides the structured data, but AI unlocks its predictive power. We took the refined feature tables and diversity metrics and fed them into Machine Learning algorithms. The goal of this downstream analysis was to identify robust microbial biomarkers that could potentially classify disease states and predict OSCC progression with high accuracy.</p>
 
-  <section id="projects">
+                <p><strong>Acknowledgments</strong><br>
+                Research is never a solitary endeavor. I want to express my deepest gratitude to <strong>Manupal Ch.</strong>, <strong>Dr. Akanksha</strong>, and <strong>Dr. Pramod</strong> for their invaluable guidance, support, and mentorship throughout this project. Their insights were instrumental in navigating the complexities of both the clinical data and the computational pipelines.</p>
+            </div>
+        </section>
 
-    <h2 class="section-title">
-      Research <span>Projects</span>
-    </h2>
+        <section id="why-me" class="section reveal">
+            <h2 class="section-title">Why Vandna Gupta?</h2>
+            <div class="card glass feature-list">
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> One of very few early-career researchers actively building complete metatranscriptomics pipelines AND integrating frontier AI tools into live cancer genomics research.</li>
+                    <li><i class="fas fa-check-circle"></i> Hands-on experience with full NGS workflow: from raw SRA data download to differential expression and functional interpretation using KEGG.</li>
+                    <li><i class="fas fa-check-circle"></i> Co-author of a Springer Nature manuscript at MSc level - demonstrating exceptional research output for career stage.</li>
+                    <li><i class="fas fa-check-circle"></i> Unique combination: wet-lab biology foundation + metatranscriptomics pipelines + AI tool proficiency + Advanced Excel certification.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-    <div class="projects-grid">
+    <footer>
+        <p>&copy; 2026 Vandna Gupta. Designed with ❤️ and AI.</p>
+    </footer>
 
-      <div class="project-card">
-
-        <h3>Metatranscriptomics Pipeline</h3>
-
-        <p>
-          Developed a complete end-to-end metatranscriptomics workflow from
-          raw SRA data to abundance count matrix generation using FastQC,
-          Bowtie2, Kraken2, STAR, HISAT2, and DESeq2.
-        </p>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>Functional Biomarker Profiling</h3>
-
-        <p>
-          Performed KEGG-based functional profiling of cancer-associated
-          microbial taxa for biomarker discovery and pathway interpretation.
-        </p>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>OSCC Microbiome Meta-analysis</h3>
-
-        <p>
-          Conducted oral microbiome meta-analysis in OSCC patient cohorts
-          using statistical analysis and differential abundance testing in R.
-        </p>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>AI-Augmented Bioinformatics</h3>
-
-        <p>
-          Integrated Claude AI, Gemini CLI, OpenCode AI, and AntiGravity AI
-          into research workflows for automation, biological interpretation,
-          and scientific documentation.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-
-  <section id="skills">
-
-    <h2 class="section-title">
-      Technical <span>Skills</span>
-    </h2>
-
-    <div class="skills-container">
-
-      <div class="skill">Python</div>
-      <div class="skill">R</div>
-      <div class="skill">Linux</div>
-      <div class="skill">Kraken2</div>
-      <div class="skill">Bowtie2</div>
-      <div class="skill">FastQC</div>
-      <div class="skill">Trimmomatic</div>
-      <div class="skill">DESeq2</div>
-      <div class="skill">edgeR</div>
-      <div class="skill">KEGG</div>
-      <div class="skill">NGS Analysis</div>
-      <div class="skill">Microbiome Analysis</div>
-      <div class="skill">Bioinformatics</div>
-      <div class="skill">AI Research Tools</div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-    <h2 class="section-title">
-      Contact <span>Me</span>
-    </h2>
-
-    <div class="contact-box">
-
-      <p>
-        <strong>Email:</strong> vandnaa2230@gmail.com
-      </p>
-
-      <p>
-        <strong>Location:</strong> Khurja, Uttar Pradesh, India
-      </p>
-
-      <p>
-        <strong>GitHub:</strong> github.com/Vandna-22
-      </p>
-
-      <p>
-        <strong>LinkedIn:</strong> linkedin.com/in/vandna-gupta-6a579a351
-      </p>
-
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 Vandna Gupta | Bioinformatics Portfolio
-  </footer>
-
+    <!-- Particles.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

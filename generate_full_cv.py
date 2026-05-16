@@ -35,7 +35,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
 
     # --- 2. Professional Summary ---
     add_heading('PROFESSIONAL SUMMARY')
-    doc.add_paragraph('M.Sc. Bioinformatics candidate (Chaudhary Charan Singh University, 2024-2026) with active research internship at the National Institute of Cancer Prevention and Research (NICPR), Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling using KEGG database, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research. Distinguished by advanced proficiency in next-generation AI research tools including Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and Gemini CLI, enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow design at a level uncommon among early-career researchers. Certified in Advanced Microsoft Excel for data analysis and reporting.')
+    doc.add_paragraph('M.Sc. Bioinformatics candidate (Chaudhary Charan Singh University, 2024-2026) with active research internship at the National Institute of Cancer Prevention and Research (ICMR-NICPR), Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling using KEGG database, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research. Distinguished by advanced proficiency in next-generation AI research tools including Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and Gemini CLI, enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow design at a level uncommon among early-career researchers. Certified in Advanced Microsoft Excel for data analysis and reporting.')
 
     # --- 3. Core Competencies ---
     add_heading('CORE COMPETENCIES')
@@ -59,7 +59,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
     # --- 4. Experience ---
     add_heading('RESEARCH & INTERNSHIP EXPERIENCE')
     exp_title = doc.add_paragraph()
-    r = exp_title.add_run('Bioinformatics Research Trainee  |  National Institute of Cancer Prevention & Research (NICPR), Noida  |  2025 - Present')
+    r = exp_title.add_run('Bioinformatics Research Trainee  |  National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida  |  2025 - Present')
     r.bold = True
 
     exp_bullets = [
@@ -117,7 +117,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
     add_heading('CERTIFICATIONS & TRAINING')
     certs = [
         'Advanced Microsoft Excel - E-Certificate (2025)',
-        'Bioinformatics Research Internship - National Institute of Cancer Prevention & Research (NICPR), Noida (2025-Present)',
+        'Bioinformatics Research Internship - National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida (2025-Present)',
         'AI-Augmented Research Methodology - Self-directed training in Claude AI, Gemini CLI, OpenCode AI for scientific research applications',
         'M.Sc. Advanced Training in Genomics, Computational Biology & Molecular Biology - CCSU, Meerut (2024-2026)'
     ]

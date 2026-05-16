@@ -1,0 +1,492 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+.pg{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:#F8F9FF;
+  color:#1A1A2E;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+/* ─── NAV ─── */
+.nav{
+  background:#fff;
+  border-bottom:1px solid #EEF0FF;
+  padding:0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:52px;
+}
+.nav-logo{font-size:15px;font-weight:700;color:#3B5BDB;letter-spacing:-.3px;}
+.nav-links{display:flex;gap:20px;}
+.nav-link{font-size:11px;color:#6B7280;font-weight:400;cursor:pointer;}
+.nav-link.active{color:#3B5BDB;font-weight:500;}
+.nav-btn{font-size:11px;font-weight:600;background:#3B5BDB;color:#fff;padding:7px 18px;border-radius:20px;cursor:pointer;}
+
+/* ─── HERO ─── */
+.hero{
+  background:#fff;
+  padding:40px 40px 36px;
+  display:grid;
+  grid-template-columns:1fr 160px;
+  gap:32px;
+  align-items:center;
+  border-bottom:1px solid #EEF0FF;
+}
+.hero-eyebrow{font-size:11px;font-weight:500;color:#3B5BDB;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px;}
+.hero-name{font-size:40px;font-weight:700;color:#1A1A2E;line-height:1.05;letter-spacing:-1px;margin-bottom:4px;}
+.hero-title{font-size:22px;font-weight:300;color:#3B5BDB;font-style:italic;margin-bottom:14px;}
+.hero-bio{font-size:12px;color:#6B7280;line-height:1.75;font-weight:300;max-width:420px;margin-bottom:20px;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-primary{font-size:11.5px;font-weight:600;background:#3B5BDB;color:#fff;padding:9px 22px;border-radius:22px;cursor:pointer;}
+.btn-outline{font-size:11.5px;font-weight:500;border:1.5px solid #3B5BDB;color:#3B5BDB;padding:8px 22px;border-radius:22px;cursor:pointer;background:transparent;}
+.hero-avatar{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,#EEF2FF 0%,#C7D2FE 100%);display:flex;align-items:center;justify-content:center;position:relative;border:3px solid #E0E7FF;}
+.avatar-initials{font-size:38px;font-weight:700;color:#3B5BDB;font-style:italic;}
+.avatar-badge{position:absolute;bottom:6px;right:6px;background:#3B5BDB;color:#fff;font-size:8px;font-weight:600;padding:3px 8px;border-radius:10px;letter-spacing:.06em;}
+
+/* ─── SHARED SECTION WRAPPER ─── */
+.section-wrap{
+  background:#fff;
+  margin:14px 14px 0;
+  border-radius:8px;
+  border:1px solid #EEF0FF;
+  padding:28px 32px;
+}
+
+/* ─── SECTION HEADER ─── */
+.sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;}
+.section-title{font-size:18px;font-weight:700;color:#1A1A2E;}
+.section-underline{width:36px;height:3px;background:#3B5BDB;border-radius:2px;margin-top:4px;}
+.see-all{font-size:11px;color:#3B5BDB;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:4px;}
+
+/* ─── ABOUT ─── */
+.about-grid{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;}
+.about-photo{width:110px;height:130px;background:linear-gradient(160deg,#EEF2FF,#C7D2FE);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;color:#3B5BDB;font-style:italic;}
+.about-text{font-size:12px;color:#6B7280;line-height:1.8;font-weight:300;margin-bottom:16px;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;}
+.sk-top{display:flex;justify-content:space-between;margin-bottom:4px;}
+.sk-name{font-size:11px;color:#374151;font-weight:500;}
+.sk-pct{font-size:10px;color:#9CA3AF;}
+.sk-bg{height:5px;background:#EEF0FF;border-radius:3px;overflow:hidden;}
+.sk-fill{height:5px;border-radius:3px;background:linear-gradient(90deg,#3B5BDB,#7C3AED);}
+
+/* ─── EXPERIENCE ─── */
+.exp-card{background:#F8F9FF;border:1px solid #EEF0FF;border-radius:10px;padding:16px 20px;border-left:3px solid #3B5BDB;}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;}
+.exp-role{font-size:13px;font-weight:600;color:#1A1A2E;}
+.exp-date{font-size:10px;font-weight:500;background:#EEF2FF;color:#3B5BDB;padding:3px 10px;border-radius:12px;white-space:nowrap;}
+.exp-org{font-size:11px;color:#3B5BDB;font-weight:400;margin-bottom:8px;}
+.exp-desc{font-size:11.5px;color:#6B7280;line-height:1.7;font-weight:300;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;}
+.etag{font-size:9.5px;padding:3px 10px;border-radius:12px;background:#EEF2FF;color:#4338CA;font-weight:500;}
+
+/* ─── PUBLICATIONS ─── */
+.pub-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pub-card{background:#F8F9FF;border:1px solid #EEF0FF;border-radius:10px;padding:16px;position:relative;overflow:hidden;}
+.pub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B5BDB,#7C3AED);}
+.pub-badge{font-size:9px;font-weight:600;padding:2px 9px;border-radius:10px;display:inline-block;margin-bottom:8px;}
+.pub-badge.review{background:#EEF2FF;color:#3B5BDB;}
+.pub-badge.prep{background:#FEF3C7;color:#D97706;}
+.pub-title-text{font-size:12px;font-weight:500;color:#1A1A2E;line-height:1.5;margin-bottom:6px;font-style:italic;}
+.pub-meta-text{font-size:10.5px;color:#9CA3AF;font-weight:300;}
+
+/* ─── TOOLKIT ─── */
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.tool-card{background:#F8F9FF;border:1px solid #EEF0FF;border-radius:10px;padding:14px 12px;text-align:center;}
+.tool-icon{width:36px;height:36px;background:linear-gradient(135deg,#EEF2FF,#C7D2FE);border-radius:8px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;}
+.tool-icon i{font-size:16px;color:#3B5BDB;}
+.tool-name{font-size:11px;font-weight:600;color:#1A1A2E;margin-bottom:3px;}
+.tool-sub{font-size:9.5px;color:#9CA3AF;font-weight:300;line-height:1.4;}
+
+/* ─── BLOG ─── */
+.blog-featured{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:14px;
+}
+.blog-card{
+  background:#F8F9FF;
+  border:1px solid #EEF0FF;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:border-color .2s;
+}
+.blog-card:hover{border-color:#C7D2FE;}
+.blog-img{
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  position:relative;
+  overflow:hidden;
+}
+.blog-img-1{background:linear-gradient(135deg,#EEF2FF,#C7D2FE);}
+.blog-img-2{background:linear-gradient(135deg,#F0FDF4,#BBF7D0);}
+.blog-img-3{background:linear-gradient(135deg,#FFF7ED,#FED7AA);}
+.blog-img-4{background:linear-gradient(135deg,#FDF4FF,#E9D5FF);}
+.blog-img-5{background:linear-gradient(135deg,#F0F9FF,#BAE6FD);}
+.blog-img-6{background:linear-gradient(135deg,#FFF1F2,#FECDD3);}
+.blog-tag-wrap{position:absolute;top:10px;left:10px;}
+.blog-tag{font-size:9px;font-weight:600;padding:3px 9px;border-radius:10px;}
+.blog-tag.genomics{background:#EEF2FF;color:#3B5BDB;}
+.blog-tag.ml{background:#F0FDF4;color:#16A34A;}
+.blog-tag.cancer{background:#FFF7ED;color:#EA580C;}
+.blog-tag.micro{background:#FDF4FF;color:#9333EA;}
+.blog-tag.tools{background:#F0F9FF;color:#0284C7;}
+.blog-tag.review{background:#FFF1F2;color:#E11D48;}
+.blog-body{padding:14px;}
+.blog-date{font-size:10px;color:#9CA3AF;font-weight:300;margin-bottom:5px;display:flex;align-items:center;gap:5px;}
+.blog-date i{font-size:11px;}
+.blog-title{font-size:12.5px;font-weight:600;color:#1A1A2E;line-height:1.45;margin-bottom:7px;}
+.blog-excerpt{font-size:11px;color:#6B7280;line-height:1.65;font-weight:300;}
+.blog-footer{padding:10px 14px;border-top:1px solid #EEF0FF;display:flex;align-items:center;justify-content:space-between;}
+.blog-read{font-size:10px;color:#3B5BDB;font-weight:500;display:flex;align-items:center;gap:4px;cursor:pointer;}
+.blog-read i{font-size:11px;}
+.blog-min{font-size:10px;color:#D1D5DB;}
+
+/* ─── EDU + CONTACT ─── */
+.bottom-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 14px 14px;}
+.edu-section,.contact-section{background:#fff;border:1px solid #EEF0FF;border-radius:8px;padding:24px 26px;}
+.edu-item{display:flex;gap:14px;align-items:flex-start;margin-top:14px;}
+.edu-dot{width:36px;height:36px;min-width:36px;background:#EEF2FF;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.edu-dot i{font-size:16px;color:#3B5BDB;}
+.edu-deg{font-size:12px;font-weight:600;color:#1A1A2E;}
+.edu-school{font-size:11px;color:#6B7280;font-weight:300;margin-top:2px;}
+.edu-year{font-size:10px;color:#3B5BDB;font-weight:500;margin-top:2px;}
+.contact-item{display:flex;align-items:center;gap:12px;margin-top:14px;}
+.contact-icon{width:34px;height:34px;min-width:34px;background:#EEF2FF;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.contact-icon i{font-size:15px;color:#3B5BDB;}
+.contact-label{font-size:10px;color:#9CA3AF;font-weight:400;}
+.contact-val{font-size:12px;color:#1A1A2E;font-weight:500;}
+
+/* ─── FEATURED BLOG ─── */
+.featured-blog{
+  background:#fff;
+  border:1px solid #EEF0FF;
+  border-radius:10px;
+  padding:22px 24px;
+  margin-bottom:24px;
+  border-left:4px solid #3B5BDB;
+}
+.featured-blog-title{
+  font-size:15px;
+  font-weight:700;
+  color:#1A1A2E;
+  margin-bottom:10px;
+  line-height:1.4;
+}
+.featured-blog-content{
+  font-size:11.5px;
+  color:#4B5563;
+  line-height:1.75;
+}
+.featured-blog-thanks{
+  font-size:11px;
+  background:#F8F9FF;
+  padding:12px 16px;
+  border-radius:6px;
+  color:#374151;
+  font-style:italic;
+  border-left:3px solid #7C3AED;
+  line-height:1.6;
+}
+</style>
+
+<div class="pg">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-logo">VG.</div>
+    <div class="nav-links">
+      <div class="nav-link active">Home</div>
+      <div class="nav-link">About</div>
+      <div class="nav-link">Research</div>
+      <div class="nav-link">Publications</div>
+      <div class="nav-link">Blog</div>
+      <div class="nav-link">Contact</div>
+    </div>
+    <div class="nav-btn">Download CV</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">MSc Bioinformatics · ICMR-NICPR</div>
+      <div class="hero-name">Hi, I am<br>Vandna Gupta</div>
+      <div class="hero-title">AI-Augmented Clinical &amp; Functional Genomics Researcher</div>
+      <div class="hero-bio">M.Sc. Bioinformatics candidate specializing in end-to-end metatranscriptomics pipeline development, functional biomarker profiling, and NGS-based microbiome analysis, distinguished by advanced proficiency in next-generation AI research tools.</div>
+      <div class="hero-btns">
+        <div class="btn-primary">Contact Me</div>
+        <div class="btn-outline">Read My Blog</div>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <div class="avatar-initials">VG</div>
+      <div class="avatar-badge">ICMR-NICPR · 2025</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div><div class="section-title">About Me</div><div class="section-underline"></div></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">VG</div>
+      <div>
+        <div class="about-text">M.Sc. Bioinformatics candidate with an active research internship at ICMR-NICPR, Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research. Proficient in integrating cutting-edge AI tools (Claude AI, NeodiSC, Gemini CLI) into live cancer genomics research.</div>
+        <div class="skills-grid">
+          <div><div class="sk-top"><span class="sk-name">Python</span><span class="sk-pct">90%</span></div><div class="sk-bg"><div class="sk-fill" style="width:90%"></div></div></div>
+          <div><div class="sk-top"><span class="sk-name">Linux / Bash</span><span class="sk-pct">82%</span></div><div class="sk-bg"><div class="sk-fill" style="width:82%"></div></div></div>
+          <div><div class="sk-top"><span class="sk-name">R / Bioconductor</span><span class="sk-pct">78%</span></div><div class="sk-bg"><div class="sk-fill" style="width:78%"></div></div></div>
+          <div><div class="sk-top"><span class="sk-name">Machine Learning</span><span class="sk-pct">70%</span></div><div class="sk-bg"><div class="sk-fill" style="width:70%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div><div class="section-title">Research Experience</div><div class="section-underline"></div></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Bioinformatics Research Trainee</span>
+        <span class="exp-date">2025 – Present</span>
+      </div>
+      <div class="exp-org">National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida</div>
+      <div class="exp-desc">Developed and executed a complete end-to-end metatranscriptomics pipeline for microbial community profiling from NCBI BioProject sequencing data. Conducted functional profiling of cancer-associated biomarkers using the KEGG database. Applied AI tools (Claude AI, Gemini CLI) for literature review and research documentation.</div>
+      <div class="exp-tags">
+        <span class="etag">Metatranscriptomics</span><span class="etag">OSCC</span><span class="etag">Kraken2</span><span class="etag">DESeq2</span><span class="etag">STAR</span><span class="etag">Python</span><span class="etag">R</span><span class="etag">Galaxy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div><div class="section-title">Publications</div><div class="section-underline"></div></div>
+    </div>
+    <div class="pub-cards">
+      <div class="pub-card">
+        <div class="pub-badge review">Under Review — Springer Nature</div>
+        <div class="pub-title-text">Oral microbiome biomarkers in oral squamous cell carcinoma: a systematic review and meta-analysis</div>
+        <div class="pub-meta-text">Co-authored · ICMR-NICPR · 2025</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-badge prep">Manuscript in Preparation</div>
+        <div class="pub-title-text">Metatranscriptomic profiling of oral microbiome in OSCC: pipeline development & differential expression</div>
+        <div class="pub-meta-text">ICMR-NICPR collaboration · 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLKIT -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div><div class="section-title">My Bioinformatics Toolkit</div><div class="section-underline"></div></div>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon"><i class="ti ti-dna" aria-hidden="true"></i></div>
+        <div class="tool-name">NGS Analysis</div>
+        <div class="tool-sub">FastQC, Trimmomatic, Bowtie2, STAR, HISAT2</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="ti ti-bug" aria-hidden="true"></i></div>
+        <div class="tool-name">Metagenomics</div>
+        <div class="tool-sub">Kraken2, Bracken, SRA Toolkit, NCBI</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <div class="tool-name">Statistics & Viz</div>
+        <div class="tool-sub">DESeq2, edgeR, ComplexHeatmap, seaborn</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
+        <div class="tool-name">Machine Learning</div>
+        <div class="tool-sub">scikit-learn, pandas, metabolomics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── BLOG SECTION ─── -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div><div class="section-title">My Blog</div><div class="section-underline"></div></div>
+      <div class="see-all">View all posts <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+
+    <!-- FEATURED POST -->
+    <div class="featured-blog">
+      <div class="blog-date" style="margin-bottom:10px;"><i class="ti ti-calendar" aria-hidden="true"></i> May 2026 &nbsp;•&nbsp; <span class="blog-tag micro" style="position:static; display:inline-block; padding:4px 10px; margin-left:4px;">Metagenomics</span></div>
+      <div class="featured-blog-title">16S rRNA Metagenomics Analysis in OPMD & OSCC: From QIIME2 to Machine Learning</div>
+      <div class="featured-blog-content">
+        <p style="margin-bottom: 10px;">In our recent work, we systematically extracted papers related to case-control studies in OPMD (Oral Potentially Malignant Disorders) and OSCC (Oral Squamous Cell Carcinoma) patients. We specifically focused on studies utilizing DNA Extraction followed by 16S rRNA sequence analysis.</p>
+        <p style="margin-bottom: 10px;">Our comprehensive bioinformatics workflow leveraged <strong>QIIME2</strong> for end-to-end processing. The pipeline included:</p>
+        <ul style="margin-left: 20px; margin-bottom: 12px;">
+          <li style="margin-bottom: 4px;"><strong>Denoising</strong> the sequence data to ensure high-quality representative sequences.</li>
+          <li style="margin-bottom: 4px;">Generating detailed <strong>Feature Tables</strong> spanning taxonomic assignments from Level 2 (Phylum) down to Level 7 (Species).</li>
+          <li>Computing and visualizing <strong>Alpha and Beta Diversity</strong> via clear bar plots and interactive QZV files.</li>
+        </ul>
+        <p style="margin-bottom: 16px;">Following the core taxonomic profiling, we successfully applied <strong>Machine Learning</strong> models on the microbiome feature tables to identify predictive microbial signatures across patient cohorts.</p>
+      </div>
+      <div class="featured-blog-thanks">
+        <strong>Acknowledgments:</strong> I would like to express my sincere gratitude to <strong>Dr. Pramod Kumar</strong> (Scientist-D) and <strong>Dr. Akanksha</strong> (Project Scientist) for their invaluable guidance and assistance. A very special thanks to <strong>Mr. Manupal Chaudhary</strong> (Technical Officer-B) for his exceptional and unwavering technical support, which made the execution of this complex pipeline seamless.
+      </div>
+    </div>
+
+    <div class="blog-featured">
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-1">
+          <div class="blog-tag-wrap"><span class="blog-tag genomics">Genomics</span></div>
+          🧬
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Apr 2025</div>
+          <div class="blog-title">How I built my first metatranscriptomics pipeline from scratch</div>
+          <div class="blog-excerpt">A step-by-step walkthrough of SRA → FastQC → Trimmomatic → Kraken2 → DESeq2 for OSCC oral microbiome data.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">8 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-2">
+          <div class="blog-tag-wrap"><span class="blog-tag ml">Machine Learning</span></div>
+          🤖
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Mar 2025</div>
+          <div class="blog-title">Fixing data leakage in my metabolomics ML pipeline</div>
+          <div class="blog-excerpt">Why my model was getting 99% accuracy — and why that was actually a bug. A deep dive into preprocessing order.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">6 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-3">
+          <div class="blog-tag-wrap"><span class="blog-tag cancer">Cancer Research</span></div>
+          🔬
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Mar 2025</div>
+          <div class="blog-title">What is OSCC and why does the oral microbiome matter?</div>
+          <div class="blog-excerpt">A beginner-friendly explainer on oral squamous cell carcinoma and the role of microbial dysbiosis in cancer.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">5 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-4">
+          <div class="blog-tag-wrap"><span class="blog-tag micro">Microbiome</span></div>
+          🦠
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Feb 2025</div>
+          <div class="blog-title">Kraken2 vs Bracken — which one should you use?</div>
+          <div class="blog-excerpt">Understanding the difference between classification and abundance estimation in metagenomic workflows.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">7 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-5">
+          <div class="blog-tag-wrap"><span class="blog-tag tools">Tools</span></div>
+          🛠️
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Jan 2025</div>
+          <div class="blog-title">Galaxy platform for beginners — no server, no stress</div>
+          <div class="blog-excerpt">How to run a full RNA-Seq analysis on Galaxy without touching the terminal. Perfect for bioinformatics beginners.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">10 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img blog-img-6">
+          <div class="blog-tag-wrap"><span class="blog-tag review">Systematic Review</span></div>
+          📄
+        </div>
+        <div class="blog-body">
+          <div class="blog-date"><i class="ti ti-calendar" aria-hidden="true"></i> Dec 2024</div>
+          <div class="blog-title">How we screened 500+ papers for our Springer Nature review</div>
+          <div class="blog-excerpt">The AI-powered PubMed screening tool I built in Python to triage papers for our OSCC microbiome meta-analysis.</div>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-read">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="blog-min">9 min read</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EDU + CONTACT -->
+  <div class="bottom-row">
+    <div class="edu-section">
+      <div class="section-title">Education</div>
+      <div class="section-underline" style="margin-bottom:0"></div>
+      <div class="edu-item">
+        <div class="edu-dot"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <div>
+          <div class="edu-deg">M.Sc. Bioinformatics</div>
+          <div class="edu-school">Chaudhary Charan Singh University, Meerut</div>
+          <div class="edu-year">2024 – 2026</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-dot"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <div>
+          <div class="edu-deg">B.Sc. Biotechnology</div>
+          <div class="edu-school">Chaudhary Charan Singh University, Meerut</div>
+          <div class="edu-year">Completed</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="section-title">Contact Me</div>
+      <div class="section-underline" style="margin-bottom:0"></div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div><div class="contact-label">Location</div><div class="contact-val">Khurja, Uttar Pradesh, India</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+        <div><div class="contact-label">Email</div><div class="contact-val">vandnaa2230@gmail.com</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/vandna-gupta-6a579a351</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="ti ti-brand-github" aria-hidden="true"></i></div>
+        <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/Vandna-22</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
