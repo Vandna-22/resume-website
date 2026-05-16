@@ -14,7 +14,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
 
     subtitle = doc.add_paragraph()
     subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    subtitle.add_run('M.Sc. Bioinformatics  |  AI-Augmented Clinical & Functional Genomics Researcher')
+    subtitle.add_run('M.Sc. Bioinformatics  |  AI-Augmented Clinical & Functional Bioinformatician')
 
     contact = doc.add_paragraph()
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
