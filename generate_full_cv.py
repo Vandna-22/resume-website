@@ -47,7 +47,9 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
         ('Programming', 'Python, R (ggplot2, DESeq2, edgeR), Bash/Linux shell scripting (Ubuntu)'),
         ('Databases', 'KEGG, NCBI, BioProject, ClinVar (familiarity), genomic databases'),
         ('Statistics', 'Mann-Whitney, Kruskal-Wallis, differential expression analysis, meta-analysis'),
-        ('Data & Reporting', 'Advanced Microsoft Excel (Certified), ggplot2, Jupyter Notebook, RStudio')
+        ('Data & Reporting', 'Advanced Microsoft Excel (Certified), ggplot2, Jupyter Notebook, RStudio'),
+        ('Drug Discovery & MD', 'AutoDock Vina, Molecular docking, Protein-ligand interactions, GROMACS, NAMD, PyMOL'),
+        ('Machine Learning', 'XGBoost, Gradient Boosting, Random Forest, SVM, Neural Networks, Scikit-learn, TensorFlow')
     ]
     table1 = doc.add_table(rows=0, cols=2)
     for k, v in table1_data:
@@ -85,7 +87,7 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
 
     proj2 = doc.add_paragraph()
     proj2.add_run('Functional Biomarker Profiling using KEGG Database').bold = True
-    add_bullet('Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers')
+    add_bullet('Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers using MetaPhlAn, Kraken2, and QIIME')
     add_bullet('Integrated Claude AI-assisted annotation with statistical outputs to accelerate pathway-level biological interpretation')
 
     proj3 = doc.add_paragraph()
@@ -118,8 +120,6 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
     certs = [
         'Advanced Microsoft Excel - E-Certificate (2025)',
         'Bioinformatics Research Internship - National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida (2025-Present)',
-        'AI-Augmented Research Methodology - Self-directed training in Claude AI, Gemini CLI, OpenCode AI for scientific research applications',
-        'M.Sc. Advanced Training in Genomics, Computational Biology & Molecular Biology - CCSU, Meerut (2024-2026)'
     ]
     for c in certs:
         add_bullet(c)
