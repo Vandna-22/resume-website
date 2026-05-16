@@ -154,6 +154,28 @@ def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
     for w in why_bullets:
         add_bullet(w)
 
+    # --- 10. Blog Post ---
+    add_heading('FEATURED BLOG POST')
+    doc.add_paragraph('Unlocking the Oral Microbiome in OSCC: A Metagenomics & Machine Learning Approach')
+    
+    blog_sections = [
+        ('Introduction', 'Oral Squamous Cell Carcinoma (OSCC) is one of the most prevalent head and neck cancers worldwide. Recent evidence strongly suggests that the oral microbiome plays a crucial role in its progression. To better understand this complex host-microbiome relationship, I recently concluded an extensive metagenomics analysis pipeline, integrating traditional bioinformatics with machine learning predictive modeling.'),
+        
+        ('Data Curation & Processing Pipeline', 'Our research began with an exhaustive literature review. We extracted highly relevant peer-reviewed papers focusing on OSCC and the microbiome, from which we successfully isolated specific BioSample IDs representing diverse patient cohorts. With the dataset curated, we leveraged QIIME 2 (Quantitative Insights Into Microbial Ecology), a powerful bioinformatics platform, to process the raw sequence data. This allowed us to generate highly detailed taxonomic feature tables:\n- Level 2 (Phylum Level): Giving us a macroscopic overview of the microbial community structure.\n- Level 7 (Species Level): Providing granular, high-resolution insights into the specific pathogenic and commensal bacteria associated with the OSCC tumor microenvironment.'),
+        
+        ('Diversity Metrics & Ecological Shifts', 'To understand the ecological imbalance (dysbiosis) in the cancer microenvironment, we generated comprehensive diversity plots:\n- Alpha Diversity: To measure the richness and evenness of microbial species within individual OSCC samples.\n- Beta Diversity: To evaluate the structural differences in microbial community composition across different patient samples, revealing distinct microbial clustering patterns associated with the disease state.'),
+        
+        ('Predictive Modeling with Machine Learning', 'Bioinformatics provides the structured data, but AI unlocks its predictive power. We took the refined feature tables and diversity metrics and fed them into Machine Learning algorithms. The goal of this downstream analysis was to identify robust microbial biomarkers that could potentially classify disease states and predict OSCC progression with high accuracy.'),
+        
+        ('Acknowledgments', 'Research is never a solitary endeavor. I want to express my deepest gratitude to Dr. Pramod Kumar (Scientist-D), Manupal Chaudhary (Technical Officer-B), and Dr. Akanksha (Project Scientist) for their invaluable guidance, support, and mentorship throughout this project. Their insights were instrumental in navigating the complexities of both the clinical data and the computational pipelines.')
+    ]
+    
+    for title, content in blog_sections:
+        p = doc.add_paragraph()
+        run = p.add_run(title)
+        run.bold = True
+        doc.add_paragraph(content)
+
     doc.save(output_path)
     print(f"CV successfully generated at {output_path}")
 
