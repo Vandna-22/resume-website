@@ -5,7 +5,11 @@ const body = document.body;
 
 // Check for saved theme preference or default to 'dark'
 const currentTheme = localStorage.getItem('theme') || 'dark';
-body.classList.add(currentTheme + '-mode');
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+} else {
+    body.classList.add('dark-mode');
+}
 
 // Update icon based on theme
 function updateThemeIcon() {
