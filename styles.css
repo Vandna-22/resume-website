@@ -71,7 +71,13 @@ body.light-mode .logo {
 body.light-mode .theme-toggle {
     background: rgba(0, 115, 230, 0.1);
     color: #0073e6;
-    border: 1px solid rgba(0, 115, 230, 0.3);
+    border: 1.5px solid rgba(0, 115, 230, 0.3);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: rgba(0, 115, 230, 0.2);
+    border-color: rgba(0, 115, 230, 0.5);
+    box-shadow: 0 0 15px rgba(0, 115, 230, 0.3);
 }
 
 body.light-mode li {
@@ -197,15 +203,23 @@ body {
     background: var(--glass);
     border: 1px solid var(--glass-border);
     color: var(--primary);
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 0;
+    z-index: 100;
+}
+
+.theme-toggle i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-toggle:hover {
