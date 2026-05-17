@@ -1,3 +1,30 @@
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+const body = document.body;
+
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
+body.classList.add(currentTheme + '-mode');
+
+// Update icon based on theme
+function updateThemeIcon() {
+    const isDarkMode = body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+}
+
+updateThemeIcon();
+
+// Theme toggle event
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+    
+    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    updateThemeIcon();
+});
+
 // Scroll Reveal Animation
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
