@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandna Gupta CV - Tailwind</title>
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.36.0/tabler-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#3B5BDB',
+                        dark: '#1A1A2E',
+                        soft: '#F8F9FF',
+                        borderc: '#EEF0FF'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient-avatar { background: linear-gradient(135deg, #EEF2FF 0%, #C7D2FE 100%); }
+        .bg-gradient-photo { background: linear-gradient(160deg, #EEF2FF, #C7D2FE); }
+        .bg-gradient-bar { background: linear-gradient(90deg, #3B5BDB, #7C3AED); }
+        
+        .blog-img-1 { background: linear-gradient(135deg, #EEF2FF, #C7D2FE); }
+        .blog-img-2 { background: linear-gradient(135deg, #F0FDF4, #BBF7D0); }
+        .blog-img-3 { background: linear-gradient(135deg, #FFF7ED, #FED7AA); }
+        .blog-img-4 { background: linear-gradient(135deg, #FDF4FF, #E9D5FF); }
+        .blog-img-5 { background: linear-gradient(135deg, #F0F9FF, #BAE6FD); }
+        .blog-img-6 { background: linear-gradient(135deg, #FFF1F2, #FECDD3); }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 font-sans text-dark flex justify-center">
+
+<div class="bg-soft rounded-lg overflow-hidden w-full max-w-5xl shadow-xl">
+
+  <!-- NAV -->
+  <div class="bg-white border-b border-borderc px-10 flex items-center justify-between h-[52px]">
+    <div class="text-[15px] font-bold text-brand tracking-tight">VG.</div>
+    <div class="flex gap-5">
+      <div class="text-[11px] text-brand font-medium cursor-pointer">Home</div>
+      <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">About</div>
+      <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Research</div>
+      <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Publications</div>
+      <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Blog</div>
+      <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Contact</div>
+    </div>
+    <div class="text-[11px] font-semibold bg-brand text-white py-[7px] px-[18px] rounded-full cursor-pointer hover:bg-blue-700 transition-colors">Download CV</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="bg-white py-10 px-10 grid grid-cols-[1fr_160px] gap-8 items-center border-b border-borderc">
+    <div>
+      <div class="text-[11px] font-medium text-brand tracking-[0.18em] uppercase mb-2">MSc Bioinformatics · ICMR-NICPR</div>
+      <div class="text-[40px] font-bold text-dark leading-[1.05] tracking-tight mb-1">Hi, I am<br>Vandna Gupta</div>
+      <div class="text-[22px] font-light text-brand italic mb-[14px]">AI-Augmented Clinical &amp; Functional Genomics Researcher</div>
+      <div class="text-[12px] text-gray-500 leading-relaxed font-light max-w-[420px] mb-5">M.Sc. Bioinformatics candidate specializing in end-to-end metatranscriptomics pipeline development, functional biomarker profiling, and NGS-based microbiome analysis, distinguished by advanced proficiency in next-generation AI research tools.</div>
+      <div class="flex gap-2.5 flex-wrap">
+        <div class="text-[11.5px] font-semibold bg-brand text-white py-[9px] px-[22px] rounded-full cursor-pointer hover:bg-blue-700 transition-colors">Contact Me</div>
+        <div class="text-[11.5px] font-medium border-[1.5px] border-brand text-brand py-2 px-[22px] rounded-full cursor-pointer bg-transparent hover:bg-blue-50 transition-colors">Read My Blog</div>
+      </div>
+    </div>
+    <div class="w-[150px] h-[150px] rounded-full bg-gradient-avatar flex items-center justify-center relative border-[3px] border-indigo-100 shadow-sm mx-auto">
+      <div class="text-[38px] font-bold text-brand italic">VG</div>
+      <div class="absolute bottom-1.5 right-1.5 bg-brand text-white text-[8px] font-semibold py-[3px] px-2 rounded-full tracking-[0.06em]">ICMR-NICPR · 2025</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+    <div class="flex items-end justify-between mb-[18px]">
+      <div>
+        <div class="text-[18px] font-bold text-dark">About Me</div>
+        <div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-[120px_1fr] gap-7 items-start">
+      <div class="w-[110px] h-[130px] bg-gradient-photo rounded-xl flex items-center justify-center text-[26px] font-bold text-brand italic shadow-sm">VG</div>
+      <div>
+        <div class="text-[12px] text-gray-500 leading-[1.8] font-light mb-4">M.Sc. Bioinformatics candidate with an active research internship at ICMR-NICPR, Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research. Proficient in integrating cutting-edge AI tools (Claude AI, NeodiSC, Gemini CLI) into live cancer genomics research.</div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-2.5">
+          <div><div class="flex justify-between mb-1"><span class="text-[11px] text-gray-700 font-medium">Python</span><span class="text-[10px] text-gray-400">90%</span></div><div class="h-[5px] bg-borderc rounded-full overflow-hidden"><div class="h-[5px] rounded-full bg-gradient-bar" style="width:90%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-[11px] text-gray-700 font-medium">Linux / Bash</span><span class="text-[10px] text-gray-400">82%</span></div><div class="h-[5px] bg-borderc rounded-full overflow-hidden"><div class="h-[5px] rounded-full bg-gradient-bar" style="width:82%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-[11px] text-gray-700 font-medium">R / Bioconductor</span><span class="text-[10px] text-gray-400">78%</span></div><div class="h-[5px] bg-borderc rounded-full overflow-hidden"><div class="h-[5px] rounded-full bg-gradient-bar" style="width:78%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-[11px] text-gray-700 font-medium">Machine Learning</span><span class="text-[10px] text-gray-400">70%</span></div><div class="h-[5px] bg-borderc rounded-full overflow-hidden"><div class="h-[5px] rounded-full bg-gradient-bar" style="width:70%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+    <div class="flex items-end justify-between mb-[18px]">
+      <div><div class="text-[18px] font-bold text-dark">Research Experience</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
+    </div>
+    <div class="bg-soft border border-borderc rounded-xl py-4 px-5 border-l-[3px] border-l-brand">
+      <div class="flex justify-between items-start gap-3 mb-1">
+        <span class="text-[13px] font-semibold text-dark">Bioinformatics Research Trainee</span>
+        <span class="text-[10px] font-medium bg-indigo-50 text-brand py-[3px] px-2.5 rounded-full whitespace-nowrap">2025 – Present</span>
+      </div>
+      <div class="text-[11px] text-brand font-normal mb-2">National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida</div>
+      <div class="text-[11.5px] text-gray-500 leading-relaxed font-light">Developed and executed a complete end-to-end metatranscriptomics pipeline for microbial community profiling from NCBI BioProject sequencing data. Conducted functional profiling of cancer-associated biomarkers using the KEGG database. Applied AI tools (Claude AI, Gemini CLI) for literature review and research documentation.</div>
+      <div class="flex flex-wrap gap-1 mt-2">
+        <span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">Metatranscriptomics</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">OSCC</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">Kraken2</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">DESeq2</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">STAR</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">Python</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">R</span><span class="text-[9.5px] py-[3px] px-2.5 rounded-full bg-indigo-50 text-indigo-700 font-medium">Galaxy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+    <div class="flex items-end justify-between mb-[18px]">
+      <div><div class="text-[18px] font-bold text-dark">Publications</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-soft border border-borderc rounded-xl p-4 relative overflow-hidden before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-gradient-bar">
+        <div class="bg-indigo-50 text-brand text-[9px] font-semibold py-[2px] px-2 rounded-full inline-block mb-2">Under Review — Springer Nature</div>
+        <div class="text-[12px] font-medium text-dark leading-snug mb-1.5 italic">Oral microbiome biomarkers in oral squamous cell carcinoma: a systematic review and meta-analysis</div>
+        <div class="text-[10.5px] text-gray-400 font-light">Co-authored · ICMR-NICPR · 2025</div>
+      </div>
+      <div class="bg-soft border border-borderc rounded-xl p-4 relative overflow-hidden before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-gradient-bar">
+        <div class="bg-amber-100 text-amber-600 text-[9px] font-semibold py-[2px] px-2 rounded-full inline-block mb-2">Manuscript in Preparation</div>
+        <div class="text-[12px] font-medium text-dark leading-snug mb-1.5 italic">Metatranscriptomic profiling of oral microbiome in OSCC: pipeline development & differential expression</div>
+        <div class="text-[10.5px] text-gray-400 font-light">ICMR-NICPR collaboration · 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLKIT -->
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+    <div class="flex items-end justify-between mb-[18px]">
+      <div><div class="text-[18px] font-bold text-dark">My Bioinformatics Toolkit</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
+    </div>
+    <div class="grid grid-cols-4 gap-2.5">
+      <div class="bg-soft border border-borderc rounded-xl py-3.5 px-3 text-center">
+        <div class="w-9 h-9 bg-gradient-avatar rounded-lg mx-auto mb-2 flex items-center justify-center"><i class="ti ti-dna text-[16px] text-brand" aria-hidden="true"></i></div>
+        <div class="text-[11px] font-semibold text-dark mb-[3px]">NGS Analysis</div>
+        <div class="text-[9.5px] text-gray-400 font-light leading-snug">FastQC, Trimmomatic, Bowtie2, STAR, HISAT2</div>
+      </div>
+      <div class="bg-soft border border-borderc rounded-xl py-3.5 px-3 text-center">
+        <div class="w-9 h-9 bg-gradient-avatar rounded-lg mx-auto mb-2 flex items-center justify-center"><i class="ti ti-bug text-[16px] text-brand" aria-hidden="true"></i></div>
+        <div class="text-[11px] font-semibold text-dark mb-[3px]">Metagenomics</div>
+        <div class="text-[9.5px] text-gray-400 font-light leading-snug">Kraken2, Bracken, SRA Toolkit, NCBI</div>
+      </div>
+      <div class="bg-soft border border-borderc rounded-xl py-3.5 px-3 text-center">
+        <div class="w-9 h-9 bg-gradient-avatar rounded-lg mx-auto mb-2 flex items-center justify-center"><i class="ti ti-chart-bar text-[16px] text-brand" aria-hidden="true"></i></div>
+        <div class="text-[11px] font-semibold text-dark mb-[3px]">Statistics & Viz</div>
+        <div class="text-[9.5px] text-gray-400 font-light leading-snug">DESeq2, edgeR, ComplexHeatmap, seaborn</div>
+      </div>
+      <div class="bg-soft border border-borderc rounded-xl py-3.5 px-3 text-center">
+        <div class="w-9 h-9 bg-gradient-avatar rounded-lg mx-auto mb-2 flex items-center justify-center"><i class="ti ti-brain text-[16px] text-brand" aria-hidden="true"></i></div>
+        <div class="text-[11px] font-semibold text-dark mb-[3px]">Machine Learning</div>
+        <div class="text-[9.5px] text-gray-400 font-light leading-snug">scikit-learn, pandas, metabolomics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG SECTION -->
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+    <div class="flex items-end justify-between mb-[18px]">
+      <div><div class="text-[18px] font-bold text-dark">My Blog</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
+      <div class="text-[11px] text-brand font-medium cursor-pointer flex items-center gap-1 hover:text-blue-700 transition-colors">View all posts <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+
+    <!-- FEATURED POST -->
+    <div class="bg-white border border-borderc rounded-xl py-5 px-6 mb-6 border-l-[4px] border-l-brand shadow-sm">
+      <div class="text-[10px] text-gray-400 font-light mb-[10px] flex items-center gap-1"><i class="ti ti-calendar" aria-hidden="true"></i> May 2026 &nbsp;•&nbsp; <span class="bg-purple-50 text-purple-600 text-[9px] font-semibold py-[3px] px-2.5 rounded-full inline-block ml-1">Metagenomics</span></div>
+      <div class="text-[15px] font-bold text-dark mb-2.5 leading-snug">16S rRNA Metagenomics Analysis in OPMD & OSCC: From QIIME2 to Machine Learning</div>
+      <div class="text-[11.5px] text-gray-600 leading-relaxed">
+        <p class="mb-2.5">In our recent work, we systematically extracted papers related to case-control studies in OPMD (Oral Potentially Malignant Disorders) and OSCC (Oral Squamous Cell Carcinoma) patients. We specifically focused on studies utilizing DNA Extraction followed by 16S rRNA sequence analysis.</p>
+        <p class="mb-2.5">Our comprehensive bioinformatics workflow leveraged <strong>QIIME2</strong> for end-to-end processing. The pipeline included:</p>
+        <ul class="ml-5 mb-3 list-disc">
+          <li class="mb-1"><strong>Denoising</strong> the sequence data to ensure high-quality representative sequences.</li>
+          <li class="mb-1">Generating detailed <strong>Feature Tables</strong> spanning taxonomic assignments from Level 2 (Phylum) down to Level 7 (Species).</li>
+          <li>Computing and visualizing <strong>Alpha and Beta Diversity</strong> via clear bar plots and interactive QZV files.</li>
+        </ul>
+        <p class="mb-4">Following the core taxonomic profiling, we successfully applied <strong>Machine Learning</strong> models on the microbiome feature tables to identify predictive microbial signatures across patient cohorts.</p>
+      </div>
+      <div class="text-[11px] bg-soft py-3 px-4 rounded-md text-gray-700 italic border-l-[3px] border-l-purple-600 leading-relaxed mt-2">
+        <strong>Acknowledgments:</strong> I would like to express my sincere gratitude to <strong>Dr. Pramod Kumar</strong> (Scientist-D) and <strong>Dr. Akanksha</strong> (Project Scientist) for their invaluable guidance and assistance. A very special thanks to <strong>Mr. Manupal Chaudhary</strong> (Technical Officer-B) for his exceptional and unwavering technical support, which made the execution of this complex pipeline seamless.
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-3.5">
+
+      <div class="bg-soft border border-borderc rounded-xl overflow-hidden cursor-pointer transition hover:border-indigo-200 shadow-sm">
+        <div class="h-[110px] flex items-center justify-center text-[28px] relative overflow-hidden blog-img-1">
+          <div class="absolute top-2.5 left-2.5"><span class="bg-indigo-50 text-brand text-[9px] font-semibold py-[3px] px-2 rounded-full">Genomics</span></div>
+          🧬
+        </div>
+        <div class="p-3.5">
+          <div class="text-[10px] text-gray-400 font-light mb-1 flex items-center gap-1"><i class="ti ti-calendar" aria-hidden="true"></i> Apr 2025</div>
+          <div class="text-[12.5px] font-semibold text-dark leading-snug mb-1.5">How I built my first metatranscriptomics pipeline from scratch</div>
+          <div class="text-[11px] text-gray-500 leading-relaxed font-light line-clamp-2">A step-by-step walkthrough of SRA → FastQC → Trimmomatic → Kraken2 → DESeq2 for OSCC oral microbiome data.</div>
+        </div>
+        <div class="py-2.5 px-3.5 border-t border-borderc flex items-center justify-between">
+          <div class="text-[10px] text-brand font-medium flex items-center gap-1 hover:text-blue-700">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="text-[10px] text-gray-400">8 min read</div>
+        </div>
+      </div>
+
+      <div class="bg-soft border border-borderc rounded-xl overflow-hidden cursor-pointer transition hover:border-indigo-200 shadow-sm">
+        <div class="h-[110px] flex items-center justify-center text-[28px] relative overflow-hidden blog-img-2">
+          <div class="absolute top-2.5 left-2.5"><span class="bg-green-50 text-green-600 text-[9px] font-semibold py-[3px] px-2 rounded-full">Machine Learning</span></div>
+          🤖
+        </div>
+        <div class="p-3.5">
+          <div class="text-[10px] text-gray-400 font-light mb-1 flex items-center gap-1"><i class="ti ti-calendar" aria-hidden="true"></i> Mar 2025</div>
+          <div class="text-[12.5px] font-semibold text-dark leading-snug mb-1.5">Fixing data leakage in my metabolomics ML pipeline</div>
+          <div class="text-[11px] text-gray-500 leading-relaxed font-light line-clamp-2">Why my model was getting 99% accuracy — and why that was actually a bug. A deep dive into preprocessing order.</div>
+        </div>
+        <div class="py-2.5 px-3.5 border-t border-borderc flex items-center justify-between">
+          <div class="text-[10px] text-brand font-medium flex items-center gap-1 hover:text-blue-700">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="text-[10px] text-gray-400">6 min read</div>
+        </div>
+      </div>
+
+      <div class="bg-soft border border-borderc rounded-xl overflow-hidden cursor-pointer transition hover:border-indigo-200 shadow-sm">
+        <div class="h-[110px] flex items-center justify-center text-[28px] relative overflow-hidden blog-img-3">
+          <div class="absolute top-2.5 left-2.5"><span class="bg-orange-50 text-orange-600 text-[9px] font-semibold py-[3px] px-2 rounded-full">Cancer Research</span></div>
+          🔬
+        </div>
+        <div class="p-3.5">
+          <div class="text-[10px] text-gray-400 font-light mb-1 flex items-center gap-1"><i class="ti ti-calendar" aria-hidden="true"></i> Mar 2025</div>
+          <div class="text-[12.5px] font-semibold text-dark leading-snug mb-1.5">What is OSCC and why does the oral microbiome matter?</div>
+          <div class="text-[11px] text-gray-500 leading-relaxed font-light line-clamp-2">A beginner-friendly explainer on oral squamous cell carcinoma and the role of microbial dysbiosis in cancer.</div>
+        </div>
+        <div class="py-2.5 px-3.5 border-t border-borderc flex items-center justify-between">
+          <div class="text-[10px] text-brand font-medium flex items-center gap-1 hover:text-blue-700">Read more <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+          <div class="text-[10px] text-gray-400">5 min read</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EDU + CONTACT -->
+  <div class="grid grid-cols-2 gap-3.5 m-3.5 mb-3.5 pb-4">
+    <div class="bg-white border border-borderc rounded-lg py-6 px-6">
+      <div class="text-[18px] font-bold text-dark">Education</div>
+      <div class="w-9 h-[3px] bg-brand rounded-full mt-1 mb-0"></div>
+      <div class="flex gap-3.5 items-start mt-3.5">
+        <div class="w-9 h-9 min-w-[36px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[16px]"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <div>
+          <div class="text-[12px] font-semibold text-dark">M.Sc. Bioinformatics</div>
+          <div class="text-[11px] text-gray-500 font-light mt-0.5">Chaudhary Charan Singh University, Meerut</div>
+          <div class="text-[10px] text-brand font-medium mt-0.5">2024 – 2026</div>
+        </div>
+      </div>
+      <div class="flex gap-3.5 items-start mt-3.5">
+        <div class="w-9 h-9 min-w-[36px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[16px]"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <div>
+          <div class="text-[12px] font-semibold text-dark">B.Sc. Biotechnology</div>
+          <div class="text-[11px] text-gray-500 font-light mt-0.5">Chaudhary Charan Singh University, Meerut</div>
+          <div class="text-[10px] text-brand font-medium mt-0.5">Completed</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-white border border-borderc rounded-lg py-6 px-6">
+      <div class="text-[18px] font-bold text-dark">Contact Me</div>
+      <div class="w-9 h-[3px] bg-brand rounded-full mt-1 mb-0"></div>
+      <div class="flex items-center gap-3 mt-3.5">
+        <div class="w-[34px] h-[34px] min-w-[34px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[15px]"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div><div class="text-[10px] text-gray-400 font-normal">Location</div><div class="text-[12px] text-dark font-medium">Khurja, Uttar Pradesh, India</div></div>
+      </div>
+      <div class="flex items-center gap-3 mt-3.5">
+        <div class="w-[34px] h-[34px] min-w-[34px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[15px]"><i class="ti ti-mail" aria-hidden="true"></i></div>
+        <div><div class="text-[10px] text-gray-400 font-normal">Email</div><div class="text-[12px] text-dark font-medium">vandnaa2230@gmail.com</div></div>
+      </div>
+      <div class="flex items-center gap-3 mt-3.5">
+        <div class="w-[34px] h-[34px] min-w-[34px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[15px]"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div>
+        <div><div class="text-[10px] text-gray-400 font-normal">LinkedIn</div><div class="text-[12px] text-dark font-medium">linkedin.com/in/vandna-gupta-6a579a351</div></div>
+      </div>
+      <div class="flex items-center gap-3 mt-3.5">
+        <div class="w-[34px] h-[34px] min-w-[34px] bg-indigo-50 rounded-lg flex items-center justify-center text-brand text-[15px]"><i class="ti ti-brand-github" aria-hidden="true"></i></div>
+        <div><div class="text-[10px] text-gray-400 font-normal">GitHub</div><div class="text-[12px] text-dark font-medium">github.com/Vandna-22</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
