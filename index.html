@@ -39,6 +39,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#work">Work</a></li>
             </ul>
             <button id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode" style="position: relative; right: 0;">
                 <i class="fas fa-moon" style="font-size: 1.3rem;"></i>
@@ -212,6 +213,87 @@
 
                 <p><strong>Acknowledgments</strong><br>
                 Research is never a solitary endeavor. I want to express my deepest gratitude to <strong>Dr. Pramod Kumar</strong> (Scientist-D), <strong>Manupal Chaudhary</strong> (Technical Officer-B), and <strong>Dr. Akanksha</strong> (Project Scientist) for their invaluable guidance, support, and mentorship throughout this project. Their insights were instrumental in navigating the complexities of both the clinical data and the computational pipelines.</p>
+            </div>
+        </section>
+
+        <section id="work" class="section reveal">
+            <h2 class="section-title">Featured Work & Pipelines</h2>
+            
+            <div class="card glass" style="margin-bottom: 2rem;">
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.8rem; color: var(--text-color, #e2e8f0); margin-bottom: 0.5rem; font-weight: 600;">Bioinformatics Research Journey at ICMR-NICPR</h3>
+                    <h4 style="font-size: 1.2rem; color: #00ffcc; margin-bottom: 0.5rem;">Project: Building Bioinformatics Pipelines for Oral Cancer Research</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light, #a0aec0);"><strong>Role:</strong> Research Intern | ICMR-National Institute of Cancer Prevention and Research, Noida</p>
+                    <p style="font-size: 0.95rem; color: var(--text-light, #a0aec0);"><strong>Mentor:</strong> Dr. Pramod Kumar (Scientist-D, Division of Molecular Biology)</p>
+                </div>
+                
+                <p style="margin-bottom: 1.5rem; line-height: 1.6;"><strong>Overview:</strong> Transitioned from a Windows environment to a Linux-based research workflow and independently built multiple bioinformatics pipelines for oral squamous cell carcinoma (OSCC) research under expert guidance.</p>
+                
+                <h4 style="color: var(--text-color, #e2e8f0); margin-bottom: 1rem; font-weight: 600;">Key Contributions:</h4>
+                <ul style="list-style-type: none; margin-bottom: 1.5rem; color: var(--text-light, #a0aec0); line-height: 1.6;">
+                    <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #00ffcc; position: absolute; left: 0; top: 4px;"></i> Automated literature mining pipeline using Python to extract BioProject/BioSample IDs from hundreds of research PDFs — cutting manual paper-reading effort to near zero.</li>
+                    <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #00ffcc; position: absolute; left: 0; top: 4px;"></i> Developed scripts using Python libraries (pandas, biopython, requests, etc.) and R for data extraction, statistical analysis, and publication-quality plot generation.</li>
+                    <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #00ffcc; position: absolute; left: 0; top: 4px;"></i> Built NGS data processing pipelines integrating tools like SRA Toolkit, FastQC, Trimmomatic, Kraken2, Bracken, STAR, DESeq2, and edgeR.</li>
+                    <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #00ffcc; position: absolute; left: 0; top: 4px;"></i> Adopted AI-assisted coding tools (Gemini CLI, OpenCode) to accelerate pipeline development.</li>
+                    <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;"><i class="fas fa-check-circle" style="color: #00ffcc; position: absolute; left: 0; top: 4px;"></i> Learned and applied core Linux commands for HPC-style research computing.</li>
+                </ul>
+                
+                <div class="tech-stack" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem;">
+                    <span class="tag">Linux</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">Gemini CLI</span>
+                    <span class="tag">OpenCode</span>
+                    <span class="tag">Galaxy</span>
+                    <span class="tag">NCBI tools</span>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.6rem; color: var(--text-color, #e2e8f0); margin-bottom: 1.5rem; text-align: center; font-weight: 600;">Metagenomics Pipeline Architecture</h3>
+            <div class="pipeline-container glass" style="padding: 2.5rem; border-radius: 16px; position: relative; overflow: hidden;">
+                <!-- Connecting Line -->
+                <div style="position: absolute; left: 3.5rem; top: 4rem; bottom: 4rem; width: 2px; background: linear-gradient(to bottom, #00ffcc 0%, rgba(0, 255, 204, 0.2) 100%); z-index: 1;"></div>
+                
+                <div class="pipeline-step" style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative; z-index: 2;">
+                    <div class="step-icon" style="background: rgba(17, 34, 64, 0.8); color: #00ffcc; border: 2px solid #00ffcc; border-radius: 50%; margin-right: 1.5rem; font-size: 1.2rem; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <div class="step-content" style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ffcc; flex-grow: 1;">
+                        <h4 style="color: var(--text-color, #e2e8f0); margin-bottom: 0.5rem; font-weight: 600;">1. Data Acquisition</h4>
+                        <p style="color: var(--text-light, #a0aec0); font-size: 0.95rem; margin: 0;">Automated retrieval of raw sequencing data from NCBI BioProject utilizing <strong>SRA Toolkit</strong> (prefetch, fasterq-dump).</p>
+                    </div>
+                </div>
+                
+                <div class="pipeline-step" style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative; z-index: 2;">
+                    <div class="step-icon" style="background: rgba(17, 34, 64, 0.8); color: #00ffcc; border: 2px solid #00ffcc; border-radius: 50%; margin-right: 1.5rem; font-size: 1.2rem; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="step-content" style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ffcc; flex-grow: 1;">
+                        <h4 style="color: var(--text-color, #e2e8f0); margin-bottom: 0.5rem; font-weight: 600;">2. Quality Control & Preprocessing</h4>
+                        <p style="color: var(--text-light, #a0aec0); font-size: 0.95rem; margin: 0;">Comprehensive quality assessment using <strong>FastQC</strong>, followed by adapter trimming and low-quality read filtering with <strong>Trimmomatic</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-step" style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative; z-index: 2;">
+                    <div class="step-icon" style="background: rgba(17, 34, 64, 0.8); color: #00ffcc; border: 2px solid #00ffcc; border-radius: 50%; margin-right: 1.5rem; font-size: 1.2rem; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="step-content" style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ffcc; flex-grow: 1;">
+                        <h4 style="color: var(--text-color, #e2e8f0); margin-bottom: 0.5rem; font-weight: 600;">3. Taxonomic Profiling</h4>
+                        <p style="color: var(--text-light, #a0aec0); font-size: 0.95rem; margin: 0;">High-performance taxonomic classification with <strong>Kraken2</strong> and highly accurate species-level abundance estimation using <strong>Bracken</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-step" style="display: flex; align-items: flex-start; position: relative; z-index: 2;">
+                    <div class="step-icon" style="background: rgba(17, 34, 64, 0.8); color: #00ffcc; border: 2px solid #00ffcc; border-radius: 50%; margin-right: 1.5rem; font-size: 1.2rem; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="step-content" style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ffcc; flex-grow: 1;">
+                        <h4 style="color: var(--text-color, #e2e8f0); margin-bottom: 0.5rem; font-weight: 600;">4. Statistical Analysis & Visualization</h4>
+                        <p style="color: var(--text-light, #a0aec0); font-size: 0.95rem; margin: 0;">Downstream analysis using <strong>R (phyloseq, ggplot2)</strong> for diversity metrics (Alpha/Beta), and <strong>DESeq2 / edgeR</strong> for differential abundance testing.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
