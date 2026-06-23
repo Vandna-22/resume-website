@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf2xml SYSTEM "pdf2xml.dtd">
+
+<pdf2xml producer="poppler" version="24.02.0">
+<page number="1" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="0" size="42" family="BAAAAA+LiberationSerif" color="#000000"/>
+	<fontspec id="1" size="15" family="CAAAAA+LiberationSans" color="#404040"/>
+	<fontspec id="2" size="15" family="DAAAAA+LiberationSans" color="#000000"/>
+	<fontspec id="3" size="15" family="CAAAAA+LiberationSans" color="#1f4e79"/>
+	<fontspec id="4" size="20" family="BAAAAA+LiberationSerif" color="#1f4e79"/>
+	<fontspec id="5" size="14" family="EAAAAA+LiberationSans" color="#666666"/>
+<text top="83" left="326" width="267" height="46" font="0"><b>Vandna Gupta</b></text>
+<text top="134" left="367" width="185" height="17" font="1">Khurja, Uttar Pradesh, India</text>
+<text top="156" left="126" width="49" height="17" font="2"><b>Email: </b></text>
+<text top="156" left="175" width="174" height="17" font="3">vandnaa2230@gmail.com</text>
+<text top="156" left="350" width="92" height="17" font="2"><b>     LinkedIn: </b></text>
+<text top="156" left="441" width="275" height="17" font="3">linkedin.com/in/vandna-gupta-6a579a351</text>
+<text top="156" left="717" width="80" height="17" font="2"><b>     GitHub: </b></text>
+<text top="173" left="384" width="151" height="17" font="3">github.com/Vandna-22</text>
+<text top="206" left="81" width="163" height="22" font="4"><b>Professional Profile</b></text>
+<text top="275" left="81" width="704" height="17" font="1">M.Sc. Bioinformatics candidate (Chaudhary Charan Singh University, 2024–2026) with an active research </text>
+<text top="292" left="81" width="758" height="17" font="1">internship at ICMR-National Institute of Cancer Prevention &amp; Research (NICPR), Noida. Specializes in end-to-end </text>
+<text top="309" left="81" width="749" height="17" font="1">metatranscriptomics pipeline development, functional biomarker profiling using the KEGG database, NGS-based </text>
+<text top="326" left="81" width="722" height="17" font="1">microbiome analysis, and multi-omics data interpretation in oral cancer research. Distinguished by advanced </text>
+<text top="344" left="81" width="726" height="17" font="1">proficiency in frontier AI research tools — Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and </text>
+<text top="361" left="81" width="717" height="17" font="1">Gemini CLI — enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow </text>
+<text top="378" left="81" width="752" height="17" font="1">design at a level uncommon among early-career researchers. Also experienced in molecular docking and protein-</text>
+<text top="395" left="81" width="614" height="17" font="1">ligand simulation using AutoDock and AutoDock Vina. Certified in Advanced Microsoft Excel.</text>
+<text top="428" left="81" width="154" height="22" font="4"><b>Key Achievements</b></text>
+<text top="496" left="102" width="662" height="17" font="1">• Co-authored a systematic review and meta-analysis on oral microbiome biomarkers in OSCC — </text>
+<text top="514" left="123" width="320" height="17" font="1">manuscript submitted to a peer-reviewed journal</text>
+<text top="534" left="102" width="695" height="17" font="1">• Built a complete end-to-end metatranscriptomics pipeline (SRA Toolkit → FastQC → Trimmomatic → </text>
+<text top="551" left="123" width="712" height="17" font="1">Bowtie2 → Kraken2/Bracken → STAR/HISAT2 → DESeq2/edgeR → KEGG) from scratch during internship</text>
+<text top="571" left="102" width="672" height="17" font="1">• One of very few early-career bioinformaticians integrating frontier AI tools (Claude AI, Gemini CLI, </text>
+<text top="589" left="123" width="399" height="17" font="1">OpenCode) into active cancer genomics research workflows</text>
+<text top="609" left="102" width="727" height="17" font="1">• Developed an automated Python pipeline for extraction of BioSample IDs from research literature PDFs to </text>
+<text top="626" left="123" width="339" height="17" font="1">streamline data collection for meta-analysis studies</text>
+<text top="646" left="102" width="523" height="17" font="1">• Certified in Advanced Microsoft Excel (2025) for data analysis and reporting</text>
+<text top="679" left="81" width="86" height="22" font="4"><b>Education</b></text>
+<text top="748" left="81" width="313" height="17" font="2"><b>2024 – 2026 (Expected)M.Sc. Bioinformatics</b></text>
+<text top="748" left="516" width="100" height="17" font="2"><b>CCSU, Meerut</b></text>
+<text top="768" left="81" width="158" height="17" font="2"><b>Relevant Coursework:</b></text>
+<text top="768" left="240" width="572" height="17" font="1">  Genomics, Proteomics, Bioinformatics Algorithms, Molecular Biology, Computational </text>
+<text top="785" left="81" width="137" height="17" font="1">Biology, Biostatistics</text>
+<text top="830" left="81" width="77" height="17" font="2"><b>Completed</b></text>
+<text top="830" left="246" width="146" height="17" font="2"><b>B.Sc. Biotechnology</b></text>
+<text top="830" left="516" width="100" height="17" font="2"><b>CCSU, Meerut</b></text>
+<text top="863" left="81" width="288" height="22" font="4"><b>Research &amp; Internship Experience</b></text>
+<text top="931" left="81" width="105" height="17" font="2"><b>2025 – Present</b></text>
+<text top="931" left="246" width="234" height="17" font="2"><b>Bioinformatics Research Trainee</b></text>
+<text top="931" left="516" width="140" height="17" font="2"><b>ICMR-NICPR, Noida</b></text>
+<text top="951" left="81" width="467" height="16" font="5"><i>Supervisor: Dr. Pramod Kumar (Scientist-D), Division of Molecular Biology</i></text>
+<text top="972" left="81" width="284" height="17" font="2"><b>Main responsibilities and contributions:</b></text>
+<text top="994" left="102" width="708" height="17" font="1">• Designed and executed a complete metatranscriptomics pipeline for microbial community profiling from </text>
+<text top="1011" left="123" width="679" height="17" font="1">NCBI BioProject sequencing data, covering SRA retrieval, QC, host removal, taxonomic classification, </text>
+<text top="1029" left="123" width="525" height="17" font="1">RNA-seq alignment, differential expression, and KEGG functional interpretation</text>
+<text top="1049" left="102" width="672" height="17" font="1">• Conducted functional profiling of cancer-associated biomarkers using the KEGG database to map </text>
+<text top="1066" left="123" width="442" height="17" font="1">metabolic and signaling pathways implicated in OSCC progression</text>
+</page>
+<page number="2" position="absolute" top="0" left="0" height="1188" width="918">
+<text top="82" left="102" width="679" height="17" font="1">• Analyzed NGS-derived microbiome datasets from oral and other cancer cohorts using Linux-based </text>
+<text top="99" left="123" width="273" height="17" font="1">bioinformatics workflows in R and Python</text>
+<text top="119" left="102" width="704" height="17" font="1">• Applied statistical methods including Mann-Whitney and Kruskal-Wallis tests for differential abundance </text>
+<text top="136" left="123" width="242" height="17" font="1">testing and multi-group comparisons</text>
+<text top="157" left="102" width="713" height="17" font="1">• Leveraged Claude AI (Anthropic) for AI-assisted literature review, rapid hypothesis generation, research </text>
+<text top="174" left="123" width="289" height="17" font="1">documentation, and manuscript preparation</text>
+<text top="194" left="102" width="722" height="17" font="1">• Utilized NeodiSC and AntiGravity AI tools for specialized bioinformatics analysis and biomarker discovery </text>
+<text top="211" left="123" width="66" height="17" font="1">workflows</text>
+<text top="232" left="102" width="720" height="17" font="1">• Generated publication-quality data visualizations — violin plots, boxplots, heatmaps — using ggplot2 and </text>
+<text top="249" left="123" width="151" height="17" font="1">ComplexHeatmap in R</text>
+<text top="269" left="102" width="696" height="17" font="1">• Developed Python automation tools: PDF classifier (smoking vs. non-smoking papers), BioSample ID </text>
+<text top="286" left="123" width="688" height="17" font="1">extraction pipeline from literature PDFs, AI-powered PubMed screening app for systematic review triage</text>
+<text top="319" left="81" width="150" height="22" font="4"><b>Research Projects</b></text>
+<text top="387" left="81" width="626" height="17" font="2"><b>Oral Microbiome Meta-Analysis in OSCC  —  Systematic Review (Manuscript Submitted)</b></text>
+<text top="408" left="102" width="683" height="17" font="1">• Co-authored systematic review analyzing oral microbiome composition across global OSCC patient </text>
+<text top="425" left="123" width="683" height="17" font="1">cohorts; identified conserved biomarker taxa and assessed confounding impact of age and geographic </text>
+<text top="442" left="123" width="57" height="17" font="1">variation</text>
+<text top="462" left="102" width="615" height="17" font="1">• AI-accelerated synthesis of 50+ peer-reviewed studies using Claude AI and OpenCode AI</text>
+<text top="501" left="81" width="530" height="17" font="2"><b>Metagenomics Pipeline — 16S rRNA Amplicon Analysis (QIIME2 + DADA2)</b></text>
+<text top="522" left="102" width="698" height="17" font="1">• Processed raw 16S rRNA amplicon sequencing data through a complete QIIME2 pipeline: paired-end </text>
+<text top="539" left="123" width="682" height="17" font="1">import → DADA2 denoising → ASV table generation → taxonomic classification using SILVA database</text>
+<text top="559" left="102" width="732" height="17" font="1">• Generated diversity analyses (alpha and beta diversity), taxonomic bar plots (phylum to species level), and </text>
+<text top="576" left="123" width="708" height="17" font="1">differential abundance outputs to characterize oral microbial community shifts in OSCC vs. healthy controls</text>
+<text top="597" left="102" width="695" height="17" font="1">• Produced publication-quality taxonomic bar plots and PCoA plots to visualize community composition </text>
+<text top="614" left="123" width="147" height="17" font="1">across patient cohorts</text>
+<text top="653" left="81" width="363" height="17" font="2"><b>Functional Biomarker Profiling via KEGG Database</b></text>
+<text top="673" left="102" width="723" height="17" font="1">• Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways using DADA2 ASV </text>
+<text top="690" left="123" width="272" height="17" font="1">pipeline, 16S rRNA profiling, and QIIME2</text>
+<text top="711" left="102" width="713" height="17" font="1">• Integrated Claude AI-assisted annotation with statistical outputs for accelerated pathway-level biological </text>
+<text top="728" left="123" width="87" height="17" font="1">interpretation</text>
+<text top="767" left="81" width="442" height="17" font="2"><b>Molecular Docking &amp; Simulation — AutoDock / AutoDock Vina</b></text>
+<text top="787" left="102" width="687" height="17" font="1">• Performed protein-ligand molecular docking using AutoDock and AutoDock Vina to evaluate binding </text>
+<text top="804" left="123" width="697" height="17" font="1">affinities and interaction modes of candidate bioactive compounds against cancer-relevant target proteins</text>
+<text top="825" left="102" width="717" height="17" font="1">• Prepared receptor and ligand structures (PDB processing, energy minimization), defined grid boxes, and </text>
+<text top="842" left="123" width="469" height="17" font="1">analyzed docking poses using PyMOL and Discovery Studio Visualizer</text>
+<text top="862" left="102" width="739" height="17" font="1">• Applied GROMACS and NAMD for molecular dynamics simulations to assess stability of docked complexes </text>
+<text top="879" left="123" width="178" height="17" font="1">over simulation trajectories</text>
+<text top="918" left="81" width="446" height="17" font="2"><b>Metabolomics ML Classification Pipeline  —  Control vs. OSCC</b></text>
+<text top="939" left="102" width="715" height="17" font="1">• Developed ML classification pipeline using XGBoost, Random Forest, SVM, and Neural Networks (scikit-</text>
+<text top="956" left="123" width="335" height="17" font="1">learn, TensorFlow) for metabolomics data analysis</text>
+<text top="995" left="81" width="336" height="17" font="2"><b>Microbiome Statistical Analysis &amp; Visualization</b></text>
+<text top="1015" left="102" width="688" height="17" font="1">• Performed differential abundance testing of microbial taxa in OSCC vs. healthy controls; reproduced </text>
+<text top="1032" left="123" width="603" height="17" font="1">diverging orange-blue heatmap of cellular biomarkers in R (ComplexHeatmap) and Python </text>
+<text top="1050" left="123" width="132" height="17" font="1">(seaborn/matplotlib)</text>
+<text top="1082" left="81" width="131" height="22" font="4"><b>Technical Skills</b></text>
+</page>
+<page number="3" position="absolute" top="0" left="0" height="1188" width="918">
+<text top="133" left="81" width="77" height="17" font="2"><b>OS &amp; Shell</b></text>
+<text top="133" left="261" width="442" height="17" font="1">Linux (Ubuntu) — command line, shell scripting, pipeline execution</text>
+<text top="159" left="81" width="79" height="17" font="2"><b>Languages</b></text>
+<text top="159" left="261" width="108" height="17" font="1">Python, R, Bash</text>
+<text top="185" left="81" width="147" height="17" font="2"><b>Metatranscriptomics</b></text>
+<text top="185" left="261" width="480" height="17" font="1">SRA Toolkit, FastQC, Trimmomatic, Bowtie2, Kraken2, Bracken, STAR, </text>
+<text top="202" left="261" width="169" height="17" font="1">HISAT2, DESeq2, edgeR</text>
+<text top="229" left="81" width="104" height="17" font="2"><b>Metagenomics</b></text>
+<text top="229" left="261" width="454" height="17" font="1">QIIME2, DADA2, 16S rRNA amplicon analysis, taxonomic bar plots, </text>
+<text top="246" left="261" width="246" height="17" font="1">alpha/beta diversity, SILVA database</text>
+<text top="272" left="81" width="133" height="17" font="2"><b>Molecular Docking</b></text>
+<text top="272" left="261" width="495" height="17" font="1">AutoDock, AutoDock Vina, PyMOL, Discovery Studio Visualizer — protein-</text>
+<text top="289" left="261" width="268" height="17" font="1">ligand docking &amp; binding affinity analysis</text>
+<text top="316" left="81" width="112" height="17" font="2"><b>MD Simulations</b></text>
+<text top="316" left="261" width="494" height="17" font="1">GROMACS, NAMD — molecular dynamics simulation, trajectory analysis, </text>
+<text top="333" left="261" width="194" height="17" font="1">complex stability assessment</text>
+<text top="359" left="81" width="127" height="17" font="2"><b>Machine Learning</b></text>
+<text top="359" left="261" width="509" height="17" font="1">XGBoost, Gradient Boosting, Random Forest, SVM, Neural Networks, Scikit-</text>
+<text top="376" left="261" width="120" height="17" font="1">learn, TensorFlow</text>
+<text top="403" left="81" width="131" height="17" font="2"><b>AI Research Tools</b></text>
+<text top="403" left="261" width="494" height="17" font="1">Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI</text>
+<text top="429" left="81" width="72" height="17" font="1">Databases</text>
+<text top="429" left="261" width="450" height="17" font="1">KEGG, NCBI, BioProject, ClinVar, SILVA, PDB, genomic databases</text>
+<text top="455" left="81" width="92" height="17" font="2"><b>Visualisation</b></text>
+<text top="455" left="261" width="466" height="17" font="1">ggplot2, ComplexHeatmap, seaborn, matplotlib, QIIME2 plots, PyMOL</text>
+<text top="481" left="81" width="122" height="17" font="2"><b>Data &amp; Reporting</b></text>
+<text top="481" left="261" width="430" height="17" font="1">Advanced Microsoft Excel (Certified), Jupyter Notebook, RStudio</text>
+<text top="508" left="81" width="67" height="17" font="2"><b>Statistics</b></text>
+<text top="508" left="261" width="513" height="17" font="1">Mann-Whitney, Kruskal-Wallis, differential expression analysis, meta-analysis</text>
+<text top="545" left="81" width="213" height="22" font="4"><b>Certifications &amp; Training</b></text>
+<text top="613" left="81" width="33" height="17" font="2"><b>2025</b></text>
+<text top="613" left="246" width="187" height="17" font="2"><b>Advanced Microsoft Excel</b></text>
+<text top="613" left="516" width="88" height="17" font="2"><b>E-Certificate</b></text>
+<text top="636" left="81" width="97" height="17" font="2"><b>2025–Present</b></text>
+<text top="636" left="246" width="253" height="17" font="2"><b>Bioinformatics Research Internship</b></text>
+<text top="636" left="516" width="140" height="17" font="2"><b>ICMR-NICPR, Noida</b></text>
+</page>
+</pdf2xml>

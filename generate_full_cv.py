@@ -1,180 +1,282 @@
 import docx
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
 
 def create_cv(output_path='Vandna_Gupta_CV_Generated.docx'):
     doc = docx.Document()
 
-    # --- 1. Header ---
-    title = doc.add_paragraph()
-    title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = title.add_run('VANDNA GUPTA')
-    run.bold = True
-    run.font.size = Pt(16)
+    # Set page margins
+    for section in doc.sections:
+        section.top_margin = Inches(0.8)
+        section.bottom_margin = Inches(0.8)
+        section.left_margin = Inches(0.8)
+        section.right_margin = Inches(0.8)
 
-    subtitle = doc.add_paragraph()
-    subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    subtitle.add_run('M.Sc. Bioinformatics  |  AI-Augmented Clinical & Functional Bioinformatician')
+    DARK_BLUE = RGBColor(31, 78, 121)
+    BLACK = RGBColor(0, 0, 0)
+    DARK_GRAY = RGBColor(64, 64, 64)
 
-    contact = doc.add_paragraph()
-    contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    contact.add_run('Khurja, Uttar Pradesh, India   |   vandnaa2230@gmail.com   |   🌐 www.linkedin.com/in/vandna-gupta-6a579a351   |   💻 github.com/Vandna-22   |   Linux  •  Python  •  R  •  KEGG  •  Kraken2  •  Claude AI')
+    # Header - Centered Name
+    p_name = doc.add_paragraph()
+    p_name.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r_name = p_name.add_run('Vandna Gupta')
+    r_name.bold = True
+    r_name.font.size = Pt(28)
+    r_name.font.name = 'Times New Roman'
+    p_name.paragraph_format.space_after = Pt(0)
 
-    # Helper functions
+    # Header - Centered Location
+    p_loc = doc.add_paragraph()
+    p_loc.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r_loc = p_loc.add_run('Khurja, Uttar Pradesh, India | Website: vandna.manupal.dev')
+    r_loc.font.size = Pt(11)
+    r_loc.font.name = 'Arial'
+    r_loc.font.color.rgb = DARK_GRAY
+    p_loc.paragraph_format.space_after = Pt(4)
+
+    # Header - Contact Info
+    p_contact = doc.add_paragraph()
+    p_contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_contact.paragraph_format.space_after = Pt(16)
+    
+    def add_contact_part(label, value):
+        r1 = p_contact.add_run(label)
+        r1.bold = True
+        r1.font.name = 'Arial'
+        r1.font.size = Pt(10)
+        
+        r2 = p_contact.add_run(value)
+        r2.font.name = 'Arial'
+        r2.font.size = Pt(10)
+        r2.font.color.rgb = DARK_BLUE
+        
+    add_contact_part('Email: ', 'vandnaa2230@gmail.com     ')
+    add_contact_part('LinkedIn: ', 'linkedin.com/in/vandna-gupta-6a579a351     ')
+    add_contact_part('GitHub: ', 'github.com/Vandna-22')
+
+    # Helper for Headings
     def add_heading(text):
-        h = doc.add_heading(level=1)
-        run = h.add_run(text)
-        run.font.name = 'Calibri'
-        run.font.color.rgb = RGBColor(0, 0, 0)
-        run.bold = True
-        return h
+        p = doc.add_paragraph()
+        p.paragraph_format.space_before = Pt(12)
+        p.paragraph_format.space_after = Pt(6)
+        r = p.add_run(text)
+        r.bold = True
+        r.font.size = Pt(16)
+        r.font.name = 'Times New Roman'
+        r.font.color.rgb = DARK_BLUE
+        
+        # Add bottom border
+        pBdr = OxmlElement('w:pBdr')
+        bottom = OxmlElement('w:bottom')
+        bottom.set(qn('w:val'), 'single')
+        bottom.set(qn('w:sz'), '6')
+        bottom.set(qn('w:space'), '1')
+        bottom.set(qn('w:color'), '1F4E79')
+        pBdr.append(bottom)
+        p._p.get_or_add_pPr().append(pBdr)
+        
+        return p
+
+    def add_normal_text(text, bold=False, italic=False, color=BLACK):
+        p = doc.add_paragraph()
+        p.paragraph_format.space_after = Pt(4)
+        r = p.add_run(text)
+        r.font.name = 'Arial'
+        r.font.size = Pt(10)
+        r.bold = bold
+        r.italic = italic
+        r.font.color.rgb = color
+        return p
 
     def add_bullet(text):
-        p = doc.add_paragraph(style='List Bullet')
-        p.add_run(text)
+        p = doc.add_paragraph(text, style='List Bullet')
+        p.paragraph_format.space_after = Pt(4)
+        p.paragraph_format.left_indent = Inches(0.25)
+        for r in p.runs:
+            r.font.name = 'Arial'
+            r.font.size = Pt(10)
+        return p
 
-    # --- 2. Professional Summary ---
-    add_heading('PROFESSIONAL SUMMARY')
-    doc.add_paragraph('M.Sc. Bioinformatics candidate (Chaudhary Charan Singh University, 2024-2026) with active research internship at the National Institute of Cancer Prevention and Research (ICMR-NICPR), Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling using KEGG database, NGS-based microbiome analysis, and multi-omics data interpretation in cancer research. Distinguished by advanced proficiency in next-generation AI research tools including Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and Gemini CLI, enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow design at a level uncommon among early-career researchers. Certified in Advanced Microsoft Excel for data analysis and reporting.')
+    # --- Professional Profile ---
+    add_heading('Professional Profile')
+    p = doc.add_paragraph()
+    r = p.add_run('M.Sc. Bioinformatics graduate (Chaudhary Charan Singh University, Completed with 86.25%) with an active research internship at ICMR-National Institute of Cancer Prevention & Research (NICPR), Noida. Specializes in end-to-end metatranscriptomics pipeline development, functional biomarker profiling using the KEGG database, NGS-based microbiome analysis, and multi-omics data interpretation in oral cancer research. Distinguished by advanced proficiency in frontier AI research tools — Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and Gemini CLI — enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow design at a level uncommon among early-career researchers. Also experienced in molecular docking and protein-ligand simulation using AutoDock and AutoDock Vina. Certified in Advanced Microsoft Excel.')
+    r.font.name = 'Arial'
+    r.font.size = Pt(10)
+    p.paragraph_format.space_after = Pt(10)
 
-    # --- 3. Core Competencies ---
-    add_heading('CORE COMPETENCIES')
-    table1_data = [
-        ('Metatranscriptomics', 'SRA Toolkit, FastQC, Trimmomatic, Bowtie2, Kraken2, Bracken, STAR, HISAT2, DESeq2, edgeR'),
-        ('NGS & Genomics', 'Variant annotation, functional profiling, KEGG pathway mapping, abundance matrix generation'),
-        ('Clinical Genomics', 'Biomarker identification, cancer genomics, microbiome-disease association, NGS diagnostics'),
-        ('AI Research Tools', 'Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI'),
-        ('Programming', 'Python, R (ggplot2, DESeq2, edgeR), Bash/Linux shell scripting (Ubuntu)'),
-        ('Databases', 'KEGG, NCBI, BioProject, ClinVar (familiarity), genomic databases'),
-        ('Statistics', 'Mann-Whitney, Kruskal-Wallis, differential expression analysis, meta-analysis'),
-        ('Data & Reporting', 'Advanced Microsoft Excel (Certified), ggplot2, Jupyter Notebook, RStudio'),
-        ('Drug Discovery & MD', 'AutoDock Vina, Molecular docking, Protein-ligand interactions, GROMACS, NAMD, PyMOL'),
-        ('Machine Learning', 'XGBoost, Gradient Boosting, Random Forest, SVM, Neural Networks, Scikit-learn, TensorFlow')
-    ]
-    table1 = doc.add_table(rows=0, cols=2)
-    for k, v in table1_data:
-        row = table1.add_row()
-        r0 = row.cells[0].paragraphs[0].add_run(k)
-        r0.bold = True
-        row.cells[1].text = v
+    # --- Key Achievements ---
+    add_heading('Key Achievements')
+    add_bullet('University Gold Medalist in M.Sc. Bioinformatics (86.25%), Chaudhary Charan Singh University')
+    add_bullet('Co-authored a systematic review and meta-analysis on oral microbiome biomarkers in OSCC — manuscript submitted to Elsevier')
+    add_bullet('Built a complete end-to-end metatranscriptomics pipeline (SRA Toolkit → FastQC → Trimmomatic → Bowtie2 → Kraken2/Bracken → STAR/HISAT2 → DESeq2/edgeR → KEGG) from scratch during internship')
+    add_bullet('One of very few early-career bioinformaticians integrating frontier AI tools (Claude AI, Gemini CLI, OpenCode) into active cancer genomics research workflows')
+    add_bullet('Developed an automated Python pipeline for extraction of BioSample IDs from research literature PDFs to streamline data collection for meta-analysis studies')
+    add_bullet('Certified in Advanced Microsoft Excel (2025) for data analysis and reporting')
 
-    # --- 4. Experience ---
-    add_heading('RESEARCH & INTERNSHIP EXPERIENCE')
-    exp_title = doc.add_paragraph()
-    r = exp_title.add_run('Bioinformatics Research Trainee  |  National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida  |  2025 - Present')
-    r.bold = True
+    # --- Education ---
+    add_heading('Education')
+    
+    table_edu = doc.add_table(rows=2, cols=3)
+    table_edu.autofit = False
+    table_edu.columns[0].width = Inches(2.0)
+    table_edu.columns[1].width = Inches(3.0)
+    table_edu.columns[2].width = Inches(1.5)
 
-    exp_bullets = [
-        'Developed and executed a complete end-to-end metatranscriptomics pipeline for microbial community profiling from NCBI BioProject sequencing data, covering SRA data retrieval (SRA Toolkit), quality control (FastQC, Trimmomatic), host read removal (Bowtie2), taxonomic classification (Kraken2, Bracken), RNA-seq alignment (STAR, HISAT2), differential expression (DESeq2, edgeR), and final abundance count matrix generation',
-        'Conducted functional profiling of cancer-associated biomarkers using the KEGG database to map metabolic and signaling pathways implicated in disease progression',
-        'Analyzed NGS-derived microbiome datasets from oral and other cancer cohorts using Linux-based bioinformatics workflows',
-        'Applied statistical methods including Mann-Whitney and Kruskal-Wallis tests for differential abundance testing and multi-group comparison in R',
-        'Leveraged Claude AI (Anthropic) for AI-assisted literature review, rapid scientific hypothesis generation, research documentation, and manuscript preparation, significantly accelerating research output',
+    def fill_row(row, col0, col1, col2, bold=True):
+        row.cells[0].text = col0
+        row.cells[1].text = col1
+        row.cells[2].text = col2
+        for cell in row.cells:
+            for p in cell.paragraphs:
+                p.paragraph_format.space_after = Pt(2)
+                for r in p.runs:
+                    r.font.name = 'Arial'
+                    r.font.size = Pt(10)
+                    r.bold = bold
+
+    fill_row(table_edu.rows[0], 'Completed (86.25%)', 'M.Sc. Bioinformatics (Gold Medalist)', 'CCSU, Meerut')
+    
+    p_course = doc.add_paragraph()
+    r_c1 = p_course.add_run('Relevant Coursework: ')
+    r_c1.bold = True
+    r_c1.font.name = 'Arial'
+    r_c1.font.size = Pt(10)
+    r_c2 = p_course.add_run('Genomics, Proteomics, Bioinformatics Algorithms, Molecular Biology, Computational Biology, Biostatistics')
+    r_c2.font.name = 'Arial'
+    r_c2.font.size = Pt(10)
+    p_course.paragraph_format.space_after = Pt(10)
+
+    fill_row(table_edu.rows[1], 'Completed', 'B.Sc. Biotechnology', 'CCSU, Meerut')
+    table_edu.rows[1].cells[0].paragraphs[0].runs[0].bold = True
+
+    # --- Research & Internship Experience ---
+    add_heading('Research & Internship Experience')
+    
+    table_exp1 = doc.add_table(rows=1, cols=3)
+    table_exp1.autofit = False
+    table_exp1.columns[0].width = Inches(2.0)
+    table_exp1.columns[1].width = Inches(3.0)
+    table_exp1.columns[2].width = Inches(1.5)
+    fill_row(table_exp1.rows[0], '2025 – Present', 'Bioinformatics Research Trainee', 'ICMR-NICPR, Noida')
+
+    add_normal_text('Supervisor: Dr. Pramod Kumar (Scientist-D), Division of Molecular Biology', italic=True, color=RGBColor(102, 102, 102))
+    add_normal_text('Main responsibilities and contributions:', bold=True)
+    
+    bullets_exp1 = [
+        'Designed and executed a complete metatranscriptomics pipeline for microbial community profiling from NCBI BioProject sequencing data, covering SRA retrieval, QC, host removal, taxonomic classification, RNA-seq alignment, differential expression, and KEGG functional interpretation',
+        'Conducted functional profiling of cancer-associated biomarkers using the KEGG database to map metabolic and signaling pathways implicated in OSCC progression',
+        'Analyzed NGS-derived microbiome datasets from oral and other cancer cohorts using Linux-based bioinformatics workflows in R and Python',
+        'Applied statistical methods including Mann-Whitney and Kruskal-Wallis tests for differential abundance testing and multi-group comparisons',
+        'Leveraged Claude AI (Anthropic) for AI-assisted literature review, rapid hypothesis generation, research documentation, and manuscript preparation',
         'Utilized NeodiSC and AntiGravity AI tools for specialized bioinformatics analysis and biomarker discovery workflows',
-        'Generated publication-quality data visualizations including violin plots and boxplots using ggplot2'
+        'Generated publication-quality data visualizations — violin plots, boxplots, heatmaps — using ggplot2 and ComplexHeatmap in R',
+        'Developed Python automation tools: PDF classifier (smoking vs. non-smoking papers), BioSample ID extraction pipeline from literature PDFs, AI-powered PubMed screening app for systematic review triage'
     ]
-    for b in exp_bullets:
+    for b in bullets_exp1:
         add_bullet(b)
 
-    # --- 5. Projects ---
-    add_heading('RESEARCH PROJECTS')
+    doc.add_paragraph() # space
 
-    proj1 = doc.add_paragraph()
-    proj1.add_run('End-to-End Metatranscriptomics Pipeline Development').bold = True
-    add_bullet('Designed and implemented a complete metatranscriptomics pipeline from raw NCBI BioProject SRA data to functional abundance count matrix')
-    add_bullet('Pipeline: SRA Toolkit (download) → FastQC (QC) → Trimmomatic (trimming) → Bowtie2 (host removal) → Kraken2/Bracken (classification) → STAR/HISAT2 (alignment) → DESeq2/edgeR (differential expression)')
-    add_bullet('Documented entire pipeline with reproducible bash, R, and Python commands for research transparency')
+    table_exp2 = doc.add_table(rows=1, cols=3)
+    table_exp2.autofit = False
+    table_exp2.columns[0].width = Inches(2.0)
+    table_exp2.columns[1].width = Inches(3.0)
+    table_exp2.columns[2].width = Inches(1.5)
+    fill_row(table_exp2.rows[0], '2023 (May – Aug)', 'Summer Research Trainee', 'Bebymil International Pvt. Ltd.')
+    add_bullet('Carried out summer research training on "Basic Techniques of Molecular and Microbiology"')
+    add_bullet('Gained practical laboratory experience in core molecular biology protocols and microbiological techniques under professional supervision')
 
-    proj2 = doc.add_paragraph()
-    proj2.add_run('Functional Biomarker Profiling using KEGG Database').bold = True
-    add_bullet('Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways to identify clinically relevant biomarkers using DADA2 ASV pipeline, 16S rRNA profiling, and QIIME2')
-    add_bullet('Integrated Claude AI-assisted annotation with statistical outputs to accelerate pathway-level biological interpretation')
-
-    proj3 = doc.add_paragraph()
-    proj3.add_run('Oral Microbiome Meta-Analysis in OSCC (Manuscript Under Review)').bold = True
-    add_bullet('Co-authored a systematic review analyzing oral microbiome composition across OSCC patient cohorts globally')
-    add_bullet('Identified conserved biomarker taxa and assessed confounding impact of age and geographic variation using rigorous meta-analytic methods')
-    add_bullet('Applied AI tools including Claude AI and OpenCode AI for accelerated literature synthesis across 50+ peer-reviewed studies')
-
-    proj4 = doc.add_paragraph()
-    proj4.add_run('AI-Augmented Bioinformatics Research Workflow').bold = True
-    add_bullet('Designed research workflows integrating Claude AI, Gemini CLI, and OpenCode AI for automated bioinformatics tasks')
-    add_bullet('Used large language models for code generation, debugging, biological data interpretation, and scientific report drafting')
-
-    proj5 = doc.add_paragraph()
-    proj5.add_run('Microbiome Statistical Analysis & Visualization').bold = True
-    add_bullet('Performed differential abundance testing of microbial taxa in OSCC vs. healthy controls using R')
-    add_bullet('Generated publication-ready figures using ggplot2 including violin plots and boxplots')
-
-    # --- 6. Education ---
-    add_heading('EDUCATION')
-    ed1 = doc.add_paragraph()
-    ed1.add_run('M.Sc. Bioinformatics  |  Chaudhary Charan Singh University, Meerut  |  2024 - 2026 (Expected)').bold = True
-    doc.add_paragraph('Relevant Coursework: Genomics, Proteomics, Bioinformatics Algorithms, Molecular Biology, Computational Biology, Biostatistics')
-
-    ed2 = doc.add_paragraph()
-    ed2.add_run('B.Sc. Biotechnology  |  Chaudhary Charan Singh University, Meerut  |  Completed').bold = True
-
-    # --- 7. Certifications ---
-    add_heading('CERTIFICATIONS & TRAINING')
-    certs = [
-        'Advanced Microsoft Excel - E-Certificate (2025)',
-        'Bioinformatics Research Internship - National Institute of Cancer Prevention & Research (ICMR-NICPR), Noida (2025-Present)',
+    # --- Research Projects ---
+    add_heading('Research Projects')
+    proj_data = [
+        ('Oral Microbiome Meta-Analysis in OSCC — Systematic Review (Manuscript Submitted)', [
+            'Co-authored systematic review analyzing oral microbiome composition across global OSCC patient cohorts; identified conserved biomarker taxa and assessed confounding impact of age and geographic variation',
+            'AI-accelerated synthesis of 50+ peer-reviewed studies using Claude AI and OpenCode AI'
+        ]),
+        ('Literature Mining Pipeline for Oral Host Microbiome', [
+            'Developed an automated pipeline for targeted paper searching on meta-transcriptomics in the oral host microbiome.',
+            'Expanded the literature extraction framework to systematically identify and categorize papers related to OPMD and OSCC within metagenomic studies.'
+        ]),
+        ('Metagenomics Pipeline — 16S rRNA Amplicon Analysis (QIIME2 + DADA2)', [
+            'Processed raw 16S rRNA amplicon sequencing data through a complete QIIME2 pipeline: paired-end import → DADA2 denoising → ASV table generation → taxonomic classification using SILVA database',
+            'Generated diversity analyses (alpha and beta diversity), taxonomic bar plots (phylum to species level), and differential abundance outputs to characterize oral microbial community shifts in OSCC vs. healthy controls',
+            'Produced publication-quality taxonomic bar plots and PCoA plots to visualize community composition across patient cohorts'
+        ]),
+        ('Functional Biomarker Profiling via KEGG Database', [
+            'Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways using DADA2 ASV pipeline, 16S rRNA profiling, and QIIME2',
+            'Integrated Claude AI-assisted annotation with statistical outputs for accelerated pathway-level biological interpretation'
+        ]),
+        ('Molecular Docking & Simulation — AutoDock / AutoDock Vina', [
+            'Performed protein-ligand molecular docking using AutoDock and AutoDock Vina to evaluate binding affinities and interaction modes of candidate bioactive compounds against cancer-relevant target proteins',
+            'Prepared receptor and ligand structures (PDB processing, energy minimization), defined grid boxes, and analyzed docking poses using PyMOL and Discovery Studio Visualizer',
+            'Applied GROMACS and NAMD for molecular dynamics simulations to assess stability of docked complexes over simulation trajectories'
+        ]),
+        ('Metabolomics ML Classification Pipeline — Control vs. OSCC', [
+            'Developed ML classification pipeline using XGBoost, Random Forest, SVM, and Neural Networks (scikit-learn, TensorFlow) for metabolomics data analysis'
+        ]),
+        ('Microbiome Statistical Analysis & Visualization', [
+            'Performed differential abundance testing of microbial taxa in OSCC vs. healthy controls; reproduced diverging orange-blue heatmap of cellular biomarkers in R (ComplexHeatmap) and Python (seaborn/matplotlib)'
+        ])
     ]
-    for c in certs:
-        add_bullet(c)
+    for title, bullets in proj_data:
+        add_normal_text(title, bold=True)
+        for b in bullets:
+            add_bullet(b)
 
-    # --- 8. Technical Skills ---
-    add_heading('TECHNICAL SKILLS')
-    table2_data = [
-        ('OS & Shell', 'Linux (Ubuntu) - command line, shell scripting, pipeline execution'),
+    # --- Technical Skills ---
+    add_heading('Technical Skills')
+    skills_data = [
+        ('OS & Shell', 'Linux (Ubuntu) — command line, shell scripting, pipeline execution'),
         ('Languages', 'Python, R, Bash'),
         ('Metatranscriptomics', 'SRA Toolkit, FastQC, Trimmomatic, Bowtie2, Kraken2, Bracken, STAR, HISAT2, DESeq2, edgeR'),
-        ('AI Tools', 'Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI'),
-        ('Bioinformatics', 'KEGG, NCBI, BioProject, microbiome analysis, NGS workflows, meta-analysis'),
-        ('Data Tools', 'Advanced Excel (Certified), Jupyter Notebook, RStudio, ggplot2'),
-        ('Communication', 'English (Professional), Hindi (Native)')
+        ('Metagenomics', 'QIIME2, DADA2, 16S rRNA amplicon analysis, taxonomic bar plots, alpha/beta diversity, SILVA database'),
+        ('Molecular Docking', 'AutoDock, AutoDock Vina, PyMOL, Discovery Studio Visualizer — protein-ligand docking & binding affinity analysis'),
+        ('MD Simulations', 'GROMACS, NAMD — molecular dynamics simulation, trajectory analysis, complex stability assessment'),
+        ('Machine Learning', 'XGBoost, Gradient Boosting, Random Forest, SVM, Neural Networks, Scikit-learn, TensorFlow'),
+        ('AI Research Tools', 'Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI'),
+        ('Databases', 'KEGG, NCBI, BioProject, ClinVar, SILVA, PDB, genomic databases'),
+        ('Visualisation', 'ggplot2, ComplexHeatmap, seaborn, matplotlib, QIIME2 plots, PyMOL'),
+        ('Data & Reporting', 'Advanced Microsoft Excel (Certified), Jupyter Notebook, RStudio'),
+        ('Statistics', 'Mann-Whitney, Kruskal-Wallis, differential expression analysis, meta-analysis')
     ]
-    table2 = doc.add_table(rows=0, cols=2)
-    for k, v in table2_data:
-        row = table2.add_row()
-        r0 = row.cells[0].paragraphs[0].add_run(k)
-        r0.bold = True
-        row.cells[1].text = v
-
-    # --- 9. Why Vandna Gupta ---
-    add_heading('WHY VANDNA GUPTA')
-    why_bullets = [
-        'One of very few early-career researchers actively building complete metatranscriptomics pipelines AND integrating frontier AI tools (Claude AI, NeodiSC, Gemini CLI) into live cancer genomics research',
-        'Hands-on experience with full NGS workflow: from raw SRA data download to differential expression and functional interpretation using KEGG',
-        'Co-author of a Springer Nature manuscript at MSc level - demonstrating exceptional research output for career stage',
-        'Unique combination: wet-lab biology foundation + metatranscriptomics pipelines + AI tool proficiency + Advanced Excel certification',
-        'Fast learner who independently adopts and applies cutting-edge technologies in real research environments'
-    ]
-    for w in why_bullets:
-        add_bullet(w)
-
-    # --- 10. Blog Post ---
-    add_heading('FEATURED BLOG POST')
-    doc.add_paragraph('Unlocking the Oral Microbiome in OSCC: A Metagenomics & Machine Learning Approach')
+    table_skills = doc.add_table(rows=len(skills_data), cols=2)
+    table_skills.autofit = False
+    table_skills.columns[0].width = Inches(2.0)
+    table_skills.columns[1].width = Inches(4.5)
     
-    blog_sections = [
-        ('Introduction', 'Oral Squamous Cell Carcinoma (OSCC) is one of the most prevalent head and neck cancers worldwide. Recent evidence strongly suggests that the oral microbiome plays a crucial role in its progression. To better understand this complex host-microbiome relationship, I recently concluded an extensive metagenomics analysis pipeline, integrating traditional bioinformatics with machine learning predictive modeling.'),
+    for i, (k, v) in enumerate(skills_data):
+        c1 = table_skills.cell(i, 0)
+        c2 = table_skills.cell(i, 1)
+        c1.text = k
+        c2.text = v
         
-        ('Data Curation & Processing Pipeline', 'Our research began with an exhaustive literature review. We extracted highly relevant peer-reviewed papers focusing on OSCC and the microbiome, from which we successfully isolated specific BioSample IDs representing diverse patient cohorts. With the dataset curated, we leveraged QIIME 2 (Quantitative Insights Into Microbial Ecology), a powerful bioinformatics platform, to process the raw sequence data. This allowed us to generate highly detailed taxonomic feature tables:\n- Level 2 (Phylum Level): Giving us a macroscopic overview of the microbial community structure.\n- Level 7 (Species Level): Providing granular, high-resolution insights into the specific pathogenic and commensal bacteria associated with the OSCC tumor microenvironment.'),
-        
-        ('Diversity Metrics & Ecological Shifts', 'To understand the ecological imbalance (dysbiosis) in the cancer microenvironment, we generated comprehensive diversity plots:\n- Alpha Diversity: To measure the richness and evenness of microbial species within individual OSCC samples.\n- Beta Diversity: To evaluate the structural differences in microbial community composition across different patient samples, revealing distinct microbial clustering patterns associated with the disease state.'),
-        
-        ('Predictive Modeling with Machine Learning', 'Bioinformatics provides the structured data, but AI unlocks its predictive power. We took the refined feature tables and diversity metrics and fed them into Machine Learning algorithms. The goal of this downstream analysis was to identify robust microbial biomarkers that could potentially classify disease states and predict OSCC progression with high accuracy.'),
-        
-        ('Acknowledgments', 'Research is never a solitary endeavor. I want to express my deepest gratitude to Dr. Pramod Kumar (Scientist-D), Manupal Chaudhary (Technical Officer-B), and Dr. Akanksha (Project Scientist) for their invaluable guidance, support, and mentorship throughout this project. Their insights were instrumental in navigating the complexities of both the clinical data and the computational pipelines.')
-    ]
-    
-    for title, content in blog_sections:
-        p = doc.add_paragraph()
-        run = p.add_run(title)
-        run.bold = True
-        doc.add_paragraph(content)
+        for p in c1.paragraphs:
+            p.paragraph_format.space_after = Pt(4)
+            for r in p.runs:
+                r.bold = True
+                r.font.name = 'Arial'
+                r.font.size = Pt(10)
+                
+        for p in c2.paragraphs:
+            p.paragraph_format.space_after = Pt(4)
+            for r in p.runs:
+                r.font.name = 'Arial'
+                r.font.size = Pt(10)
+
+    # --- Certifications & Training ---
+    add_heading('Certifications & Training')
+    table_certs = doc.add_table(rows=3, cols=3)
+    table_certs.autofit = False
+    table_certs.columns[0].width = Inches(2.0)
+    table_certs.columns[1].width = Inches(3.0)
+    table_certs.columns[2].width = Inches(1.5)
+
+    fill_row(table_certs.rows[0], '2025', 'Advanced Microsoft Excel', 'E-Certificate')
+    fill_row(table_certs.rows[1], '2025–Present', 'Bioinformatics Research Internship', 'ICMR-NICPR, Noida')
+    fill_row(table_certs.rows[2], '2023', 'Basic Techniques of Molecular and Microbiology', 'Bebymil International Pvt. Ltd.')
 
     doc.save(output_path)
     print(f"CV successfully generated at {output_path}")

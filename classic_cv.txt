@@ -1,0 +1,185 @@
+Vandna Gupta
+Email: vandnaa2230@gmail.com
+
+Khurja, Uttar Pradesh, India
+LinkedIn: linkedin.com/in/vandna-gupta-6a579a351
+github.com/Vandna-22
+
+GitHub:
+
+Professional Profile
+M.Sc. Bioinformatics graduate (Chaudhary Charan Singh University, Completed with 86.25%) with an active research
+internship at ICMR-National Institute of Cancer Prevention & Research (NICPR), Noida. Specializes in end-to-end
+metatranscriptomics pipeline development, functional biomarker profiling using the KEGG database, NGS-based
+microbiome analysis, and multi-omics data interpretation in oral cancer research. Distinguished by advanced
+proficiency in frontier AI research tools — Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, and
+Gemini CLI — enabling accelerated hypothesis generation, literature synthesis, and bioinformatics workflow
+design at a level uncommon among early-career researchers. Also experienced in molecular docking and proteinligand simulation using AutoDock and AutoDock Vina. Certified in Advanced Microsoft Excel.
+
+Key Achievements
+•
+•
+•
+•
+•
+
+• University Gold Medalist in M.Sc. Bioinformatics (86.25%), Chaudhary Charan Singh University
+• Co-authored a systematic review and meta-analysis on oral microbiome biomarkers in OSCC —
+manuscript submitted to Elsevier
+Built a complete end-to-end metatranscriptomics pipeline (SRA Toolkit → FastQC → Trimmomatic →
+Bowtie2 → Kraken2/Bracken → STAR/HISAT2 → DESeq2/edgeR → KEGG) from scratch during internship
+One of very few early-career bioinformaticians integrating frontier AI tools (Claude AI, Gemini CLI,
+OpenCode) into active cancer genomics research workflows
+Developed an automated Python pipeline for extraction of BioSample IDs from research literature PDFs to
+streamline data collection for meta-analysis studies
+Certified in Advanced Microsoft Excel (2025) for data analysis and reporting
+
+Education
+Completed (86.25%)M.Sc. Bioinformatics (Gold Medalist)
+CCSU, Meerut
+Relevant Coursework: Genomics, Proteomics, Bioinformatics Algorithms, Molecular Biology, Computational
+Biology, Biostatistics
+Completed
+
+B.Sc. Biotechnology
+
+CCSU, Meerut
+
+Research & Internship Experience
+2025 – Present
+
+Bioinformatics Research Trainee
+
+ICMR-NICPR, Noida
+
+Supervisor: Dr. Pramod Kumar (Scientist-D), Division of Molecular Biology
+
+Main responsibilities and contributions:
+• Designed and executed a complete metatranscriptomics pipeline for microbial community profiling from
+NCBI BioProject sequencing data, covering SRA retrieval, QC, host removal, taxonomic classification,
+RNA-seq alignment, differential expression, and KEGG functional interpretation
+• Conducted functional profiling of cancer-associated biomarkers using the KEGG database to map
+metabolic and signaling pathways implicated in OSCC progression
+
+•
+•
+•
+•
+•
+•
+
+Analyzed NGS-derived microbiome datasets from oral and other cancer cohorts using Linux-based
+bioinformatics workflows in R and Python
+Applied statistical methods including Mann-Whitney and Kruskal-Wallis tests for differential abundance
+testing and multi-group comparisons
+Leveraged Claude AI (Anthropic) for AI-assisted literature review, rapid hypothesis generation, research
+documentation, and manuscript preparation
+Utilized NeodiSC and AntiGravity AI tools for specialized bioinformatics analysis and biomarker discovery
+workflows
+Generated publication-quality data visualizations — violin plots, boxplots, heatmaps — using ggplot2 and
+ComplexHeatmap in R
+Developed Python automation tools: PDF classifier (smoking vs. non-smoking papers), BioSample ID
+extraction pipeline from literature PDFs, AI-powered PubMed screening app for systematic review triage
+
+Research Projects
+Oral Microbiome Meta-Analysis in OSCC — Systematic Review (Manuscript Submitted)
+• Co-authored systematic review analyzing oral microbiome composition across global OSCC patient
+cohorts; identified conserved biomarker taxa and assessed confounding impact of age and geographic
+variation
+• AI-accelerated synthesis of 50+ peer-reviewed studies using Claude AI and OpenCode AI
+Literature Mining Pipeline for Oral Host Microbiome
+• Developed an automated pipeline for targeted paper searching on meta-transcriptomics in the oral host microbiome
+• Expanded the literature extraction framework to systematically identify and categorize papers related to OPMD and OSCC within metagenomic studies
+Metagenomics Pipeline — 16S rRNA Amplicon Analysis (QIIME2 + DADA2)
+• Processed raw 16S rRNA amplicon sequencing data through a complete QIIME2 pipeline: paired-end
+import → DADA2 denoising → ASV table generation → taxonomic classification using SILVA database
+• Generated diversity analyses (alpha and beta diversity), taxonomic bar plots (phylum to species level), and
+differential abundance outputs to characterize oral microbial community shifts in OSCC vs. healthy controls
+• Produced publication-quality taxonomic bar plots and PCoA plots to visualize community composition
+across patient cohorts
+Functional Biomarker Profiling via KEGG Database
+• Mapped cancer-associated microbial taxa to KEGG metabolic and signaling pathways using DADA2 ASV
+pipeline, 16S rRNA profiling, and QIIME2
+• Integrated Claude AI-assisted annotation with statistical outputs for accelerated pathway-level biological
+interpretation
+Molecular Docking & Simulation — AutoDock / AutoDock Vina
+• Performed protein-ligand molecular docking using AutoDock and AutoDock Vina to evaluate binding
+affinities and interaction modes of candidate bioactive compounds against cancer-relevant target proteins
+• Prepared receptor and ligand structures (PDB processing, energy minimization), defined grid boxes, and
+analyzed docking poses using PyMOL and Discovery Studio Visualizer
+• Applied GROMACS and NAMD for molecular dynamics simulations to assess stability of docked complexes
+over simulation trajectories
+Metabolomics ML Classification Pipeline — Control vs. OSCC
+• Developed ML classification pipeline using XGBoost, Random Forest, SVM, and Neural Networks (scikitlearn, TensorFlow) for metabolomics data analysis
+Microbiome Statistical Analysis & Visualization
+• Performed differential abundance testing of microbial taxa in OSCC vs. healthy controls; reproduced
+diverging orange-blue heatmap of cellular biomarkers in R (ComplexHeatmap) and Python
+(seaborn/matplotlib)
+
+Technical Skills
+
+OS & Shell
+
+Linux (Ubuntu) — command line, shell scripting, pipeline execution
+
+Languages
+
+Python, R, Bash
+
+Metatranscriptomics
+
+SRA Toolkit, FastQC, Trimmomatic, Bowtie2, Kraken2, Bracken, STAR,
+HISAT2, DESeq2, edgeR
+
+Metagenomics
+
+QIIME2, DADA2, 16S rRNA amplicon analysis, taxonomic bar plots,
+alpha/beta diversity, SILVA database
+
+Molecular Docking
+
+AutoDock, AutoDock Vina, PyMOL, Discovery Studio Visualizer — proteinligand docking & binding affinity analysis
+
+MD Simulations
+
+GROMACS, NAMD — molecular dynamics simulation, trajectory analysis,
+complex stability assessment
+
+Machine Learning
+
+XGBoost, Gradient Boosting, Random Forest, SVM, Neural Networks, Scikitlearn, TensorFlow
+
+AI Research Tools
+
+Claude AI (Anthropic), NeodiSC, AntiGravity AI, OpenCode AI, Gemini CLI
+
+Databases
+
+KEGG, NCBI, BioProject, ClinVar, SILVA, PDB, genomic databases
+
+Visualisation
+
+ggplot2, ComplexHeatmap, seaborn, matplotlib, QIIME2 plots, PyMOL
+
+Data & Reporting
+
+Advanced Microsoft Excel (Certified), Jupyter Notebook, RStudio
+
+Statistics
+
+Mann-Whitney, Kruskal-Wallis, differential expression analysis, meta-analysis
+
+Certifications & Training
+2025
+
+Advanced Microsoft Excel
+
+E-Certificate
+
+2025–Present
+
+Bioinformatics Research Internship
+
+ICMR-NICPR, Noida
+
+
