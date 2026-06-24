@@ -40,7 +40,12 @@
         .blog-img-4 { background: linear-gradient(135deg, #FDF4FF, #E9D5FF); }
         .blog-img-5 { background: linear-gradient(135deg, #F0F9FF, #BAE6FD); }
         .blog-img-6 { background: linear-gradient(135deg, #FFF1F2, #FECDD3); }
-    </style>
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .pdf-section { page-break-after: always; break-after: page; }
+          .no-break { page-break-inside: avoid; break-inside: avoid; }
+        }
+      </style>
 </head>
 <body class="bg-gray-100 p-4 font-sans text-dark flex justify-center">
 
@@ -57,7 +62,7 @@
       <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Blog</div>
       <div class="text-[11px] text-gray-500 font-normal cursor-pointer hover:text-brand transition-colors">Contact</div>
     </div>
-    <div class="text-[11px] font-semibold bg-brand text-white py-[7px] px-[18px] rounded-full cursor-pointer hover:bg-blue-700 transition-colors">Download CV</div>
+    <div id="download-cv" class="text-[11px] font-semibold bg-brand text-white py-[7px] px-[18px] rounded-full cursor-pointer hover:bg-blue-700 transition-colors">Download CV</div>
   </div>
 
   <!-- HERO -->
@@ -79,7 +84,7 @@
   </div>
 
   <!-- ABOUT -->
-  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8 pdf-section">
     <div class="flex items-end justify-between mb-[18px]">
       <div>
         <div class="text-[18px] font-bold text-dark">About Me</div>
@@ -101,7 +106,7 @@
   </div>
 
   <!-- EXPERIENCE -->
-  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8 pdf-section">
     <div class="flex items-end justify-between mb-[18px]">
       <div><div class="text-[18px] font-bold text-dark">Research Experience</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
     </div>
@@ -119,7 +124,7 @@
   </div>
 
   <!-- PUBLICATIONS -->
-  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8 pdf-section">
     <div class="flex items-end justify-between mb-[18px]">
       <div><div class="text-[18px] font-bold text-dark">Publications</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
     </div>
@@ -138,7 +143,7 @@
   </div>
 
   <!-- TOOLKIT -->
-  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8 pdf-section">
     <div class="flex items-end justify-between mb-[18px]">
       <div><div class="text-[18px] font-bold text-dark">My Bioinformatics Toolkit</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
     </div>
@@ -167,7 +172,7 @@
   </div>
 
   <!-- BLOG SECTION -->
-  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8">
+  <div class="bg-white mx-3.5 mt-3.5 rounded-lg border border-borderc py-7 px-8 pdf-section">
     <div class="flex items-end justify-between mb-[18px]">
       <div><div class="text-[18px] font-bold text-dark">My Blog</div><div class="w-9 h-[3px] bg-brand rounded-full mt-1"></div></div>
       <div class="text-[11px] text-brand font-medium cursor-pointer flex items-center gap-1 hover:text-blue-700 transition-colors">View all posts <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
@@ -247,7 +252,7 @@
 
   <!-- EDU + CONTACT -->
   <div class="grid grid-cols-2 gap-3.5 m-3.5 mb-3.5 pb-4">
-    <div class="bg-white border border-borderc rounded-lg py-6 px-6">
+    <div class="bg-white border border-borderc rounded-lg py-6 px-6 pdf-section">
       <div class="text-[18px] font-bold text-dark">Education</div>
       <div class="w-9 h-[3px] bg-brand rounded-full mt-1 mb-0"></div>
       <div class="flex gap-3.5 items-start mt-3.5">
@@ -268,7 +273,7 @@
       </div>
     </div>
     
-    <div class="bg-white border border-borderc rounded-lg py-6 px-6">
+    <div class="bg-white border border-borderc rounded-lg py-6 px-6 pdf-section">
       <div class="text-[18px] font-bold text-dark">Contact Me</div>
       <div class="w-9 h-[3px] bg-brand rounded-full mt-1 mb-0"></div>
       <div class="flex items-center gap-3 mt-3.5">
@@ -294,3 +299,26 @@
 
 </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script>
+// Download CV as multi-page PDF using html2pdf
+document.getElementById('download-cv').addEventListener('click', function () {
+  const element = document.querySelector('.bg-soft.rounded-lg');
+  if (!element) {
+    alert('Could not find resume content to generate PDF.');
+    return;
+  }
+  const opt = {
+    margin:       10,
+    filename:     'Vandna_Gupta_CV.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2, useCORS: true },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(opt).from(element).save().catch(function(err){
+    alert('PDF generation failed: ' + (err && err.message ? err.message : err));
+    console.error(err);
+  });
+});
+</script>
